@@ -139,18 +139,9 @@
     }
 
     .subtitulo-seccion,
-    main:nth-of-type(1) > section#biografia:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) {
-      font-family: var(--font-heading);
-      text-transform: uppercase;
-      letter-spacing: 2.2px;
-      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
-      font-weight: 700;
-      color: var(--purpura-electrico);
-      margin-top: 8px;
-      margin-bottom: 14px;
-      display: block;
-      text-align: center;
-      line-height: 1.4;
+    main:nth-of-type(1) > section#biografia:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1),
+    main:nth-of-type(1) > section#servicios:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) {
+      display: none !important;
     }
 
     /* ==========================================================================
@@ -1491,7 +1482,7 @@
     }
 
     .section-header-dark p {
-      color: #9d96a8;
+      color: #ffffff;
       font-size: clamp(1.08rem, 1.8vw, 1.25rem);
     }
 
@@ -1564,7 +1555,7 @@
 
     .servicio-desc {
       font-size: 1.02rem;
-      color: #a39cae;
+      color: #ffffff;
       line-height: 1.6;
       margin-bottom: 22px;
     }
@@ -1718,7 +1709,7 @@
     }
 
     .subseccion-header p {
-      color: #9d96a8;
+      color: #ffffff;
       font-size: 1.12rem;
       max-width: 780px;
       margin-left: auto;
@@ -1756,7 +1747,7 @@
 
     .subitem-card p {
       font-size: 0.94rem;
-      color: #a49cb0;
+      color: #ffffff;
       line-height: 1.55;
     }
 
@@ -1889,7 +1880,7 @@
 
     .tema-conferencia-card p {
       font-size: 0.96rem;
-      color: #b0a8ba;
+      color: #ffffff;
       line-height: 1.55;
     }
 
@@ -1916,7 +1907,7 @@
     }
 
     .conferencias-form-header p {
-      color: #b0a8ba;
+      color: #ffffff;
       font-size: 1.1rem;
     }
 
@@ -1995,9 +1986,16 @@
     }
 
     .talleres-preview-item p {
-      color: #9d96a8;
+      color: #ffffff;
       font-size: 0.92rem;
       line-height: 1.45;
+    }
+
+    /* Regla general y selectores de foco para párrafos en servicios */
+    main:nth-of-type(1) > section#servicios:nth-of-type(3) > div:nth-of-type(1) > div#capacitacion-talleres:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1),
+    main:nth-of-type(1) > section#servicios:nth-of-type(3) > div:nth-of-type(1) > div#capacitacion-talleres:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1),
+    #servicios p {
+      color: #ffffff !important;
     }
 
     /* ==========================================================================
@@ -3859,7 +3857,6 @@
       <div class="container">
         <div class="section-header-light reveal-on-scroll">
           <h2 data-i18n="bioTitle">Biografía</h2>
-          <span class="subtitulo-seccion" data-i18n="bioSubtitle">Perfil & Trayectoria Profesional</span>
 
           <!-- Imagen del Psicólogo visible en todos los dispositivos -->
           <div class="perfil-foto-container biografia-foto-destacada-wrap reveal-scale reveal-delay-100">
@@ -3901,7 +3898,6 @@
         <!-- Encabezado de la Sección Servicios -->
         <div class="section-header-dark reveal-on-scroll">
           <h2 data-i18n="servicesMainTitle">Servicios Profesionales</h2>
-          <span class="subtitulo-seccion" data-i18n="servicesMainSubtitle">Áreas de Práctica & Especialidad</span>
         </div>
 
         <!-- ====================================================================
@@ -3922,34 +3918,10 @@
 
           <div class="subseccion-header reveal-on-scroll">
             <h3 data-i18n="servConfTitle">Conferencias Magistrales: Ponencias que Transforman</h3>
-            <span class="subtitulo-seccion" data-i18n="servConfTag">Conferencias Magistrales & Keynotes</span>
             <p data-i18n="servConfDesc">
               Diseñadas como experiencias únicas de aprendizaje, estas conferencias van más allá de la exposición académica tradicional para convertirse en verdaderos catalizadores de cambio. A través de un enfoque dinámico y riguroso que entrelaza la psicología conductual, la comunicación efectiva y las humanidades, cada ponencia está estructurada para conmover, cuestionar y redefinir la perspectiva de la audiencia.
             </p>
           </div>
-
-          <!-- Reproductor de Video de Conferencia Magistral en YouTube -->
-          <div class="conferencia-video-container reveal-on-scroll reveal-delay-100">
-            <div class="conferencia-video-topbar">
-              <span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                Conferencia Magistral | Jaime Vargas
-              </span>
-              <span style="font-size: 0.75rem; color: #a49cb0;">Psicología & Comunicación</span>
-            </div>
-            <div class="video-ratio-16-9">
-              <iframe 
-                src="https://www.youtube-nocookie.com/embed/iCvmsMzlF7o?rel=0&modestbranding=1" 
-                title="Conferencia Magistral - Jaime Vargas | Psicología y Comunicación Estratégica" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen
-                loading="lazy">
-              </iframe>
-            </div>
-          </div>
-          <p class="conferencia-video-caption reveal-on-scroll">
-            Registro audiovisual de ponencia magistral: Estructuración del discurso, psicología del comportamiento y conexión emocional con auditorios de alto impacto.
-          </p>
 
           <!-- Tipos de Conferencias Magistrales Disponibles -->
           <div class="temas-conferencias-wrap reveal-on-scroll reveal-delay-150">
@@ -4010,7 +3982,6 @@
 
           <div class="subseccion-header reveal-on-scroll">
             <h3 data-i18n="servTallTitle">Capacitación y Talleres Prácticos</h3>
-            <span class="subtitulo-seccion" data-i18n="servTallTag">Formación Ejecutiva, Grupal & Educativa</span>
             <p data-i18n="servTallDesc">
               Entrenamientos interactivos y programas modulares orientados a desarrollar habilidades críticas en comunicación interpersonal, empatía, bienestar organizacional, psicología educativa y preparación para evaluaciones de alto desempeño.
             </p>
@@ -4065,7 +4036,6 @@
 
           <div class="subseccion-header reveal-on-scroll">
             <h3 data-i18n="servAsesTitle">Asesoría Psicológica & Acompañamiento</h3>
-            <span class="subtitulo-seccion" data-i18n="servAsesTag">Atención Clínica Individual</span>
             <p data-i18n="servAsesP1">
               Un espacio seguro y estrictamente confidencial, concebido para brindar la tranquilidad y la comodidad que cada consultante necesita al iniciar su proceso. Aquí, la privacidad es la base sobre la cual se construye una relación de confianza mutua, libre de juicios y orientada al bienestar integral.
             </p>
@@ -4097,7 +4067,6 @@
 
           <div class="subseccion-header reveal-on-scroll">
             <h3 data-i18n="servDuelTitle">Acompañamiento en Duelos y Rupturas</h3>
-            <span class="subtitulo-seccion" data-i18n="servDuelTag">Procesos Afectivos & Transiciones</span>
             <p data-i18n="servDuelDesc">
               Un espacio de contención clínica riguroso y humano, diseñado para transitar el impacto de la pérdida y procesar el dolor desde una perspectiva integradora. A través de un abordaje conductual-humanista, este proceso ofrece las herramientas necesarias para comprender la complejidad de la separación, aliviar la carga emocional y reestructurar el bienestar integral.
             </p>
@@ -4111,15 +4080,11 @@
       </div>
     </section>
 
-      </div>
-    </section>
-
     <!-- 4. SECCIÓN PUBLICACIONES -->
     <section id="libros" class="libros-section">
       <div class="container">
         <div class="section-header-light reveal-on-scroll">
           <h2 data-i18n="booksTitle">Publicaciones</h2>
-          <span class="subtitulo-seccion" data-i18n="booksSubtitle">Obras Editoriales & Ensayo Psicológico</span>
           <p class="section-desc-light" data-i18n="booksDesc">
             Textos concebidos para profundizar en los mecanismos de la mente humana, la comunicación de alta influencia y la reconstrucción del bienestar emocional con rigor clínico.
           </p>
@@ -4222,7 +4187,6 @@
       <div class="container">
         <div class="section-header-light reveal-on-scroll">
           <h2 data-i18n="podcastTitle">La Píldora Blanca Podcast ⚪</h2>
-          <span class="subtitulo-seccion" data-i18n="podcastSubtitle">Psicología, Filosofía & Modernidad</span>
           <p class="section-desc-light" data-i18n="podcastDesc">
             La píldora blanca explora los acontecimientos y narrativas del mundo contemporáneo desde una perspectiva objetiva y perspicaz. Conducido por <strong>Jaime Vargas</strong>, un espacio donde la psicología, la filosofía y la modernidad se unen para comprender nuestra realidad.
           </p>
@@ -4354,7 +4318,6 @@
       <div class="container">
         <div class="section-header-light reveal-on-scroll">
           <h2 data-i18n="contactTitle">Contacto</h2>
-          <span class="subtitulo-seccion" data-i18n="contactSubtitle">Atención Directa & Reserva</span>
         </div>
 
         <div class="contacto-grid">
