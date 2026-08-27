@@ -1839,20 +1839,62 @@
     }
 
     .tema-conferencia-card {
-      background: rgba(26, 20, 34, 0.85);
-      border: 1px solid rgba(150, 16, 217, 0.22);
-      border-radius: var(--radio-borde);
-      padding: 24px;
-      transition: var(--transicion-suave);
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(150, 16, 217, 0.28);
+      box-shadow: 0 10px 28px rgba(10, 6, 20, 0.4);
       display: flex;
       flex-direction: column;
+      min-height: 250px;
+      background: #0f0a17;
+      transition: var(--transicion-suave);
     }
 
     .tema-conferencia-card:hover {
-      border-color: var(--purpura-electrico);
+      border-color: rgba(150, 16, 217, 0.55);
+      box-shadow: 0 16px 36px rgba(150, 16, 217, 0.2);
       transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(150, 16, 217, 0.15);
-      background: rgba(35, 27, 47, 0.95);
+    }
+
+    .tema-conferencia-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1;
+    }
+
+    .tema-conferencia-card:hover .tema-conferencia-bg {
+      transform: scale(1.06);
+    }
+
+    .tema-conferencia-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13, 8, 22, 0.82) 0%, rgba(13, 8, 22, 0.95) 100%);
+      z-index: 2;
+      backdrop-filter: blur(1.5px);
+      -webkit-backdrop-filter: blur(1.5px);
+      transition: background 0.3s ease;
+    }
+
+    .tema-conferencia-card:hover .tema-conferencia-overlay {
+      background: linear-gradient(180deg, rgba(13, 8, 22, 0.74) 0%, rgba(13, 8, 22, 0.91) 100%);
+    }
+
+    .tema-conferencia-content {
+      position: relative;
+      z-index: 3;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-start;
+      gap: 10px;
     }
 
     .tema-num-badge {
@@ -1871,17 +1913,20 @@
 
     .tema-conferencia-card h4 {
       font-family: var(--font-heading);
-      font-size: 1.28rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: var(--texto-claro);
-      margin-bottom: 10px;
+      color: #ffffff;
+      margin: 0;
       line-height: 1.35;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
     }
 
     .tema-conferencia-card p {
-      font-size: 0.96rem;
-      color: #ffffff;
+      font-size: 0.94rem;
+      color: #e5def5 !important;
       line-height: 1.55;
+      margin: 0;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
     }
 
     /* Caja de Cotización y Formulario de Conferencias */
@@ -4134,19 +4179,52 @@
 
             <div class="temas-conferencias-grid">
               
+              <!-- Conferencia 1: Comunicación Estratégica & Persuasión Ética -->
               <div class="tema-conferencia-card">
-                <h4>Psicología de la Comunicación Estratégica & Persuasión Ética</h4>
-                <p>Cómo estructurar argumentos de alto impacto, dominar los sesgos cognitivos del receptor y transmitir mensajes que inspiren compromiso y acción sin manipular.</p>
+                <img 
+                  src="/src/assets/images/conf_comunicacion_1787865470239.jpg" 
+                  alt="Psicología de la Comunicación Estratégica & Persuasión Ética" 
+                  class="tema-conferencia-bg" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer"
+                />
+                <div class="tema-conferencia-overlay"></div>
+                <div class="tema-conferencia-content">
+                  <h4>Psicología de la Comunicación Estratégica & Persuasión Ética</h4>
+                  <p>Cómo estructurar argumentos de alto impacto, dominar los sesgos cognitivos del receptor y transmitir mensajes que inspiren compromiso y acción sin manipular.</p>
+                </div>
               </div>
 
+              <!-- Conferencia 2: Liderazgo Humanista y Cultura de Confianza -->
               <div class="tema-conferencia-card">
-                <h4>Liderazgo Humanista y Cultura de Confianza</h4>
-                <p>Claves psicológicas para la toma de decisiones bajo incertidumbre, gestión de la empatía ejecutiva y construcción de entornos libres de burnout.</p>
+                <img 
+                  src="/src/assets/images/conf_liderazgo_1787865482611.jpg" 
+                  alt="Liderazgo Humanista y Cultura de Confianza" 
+                  class="tema-conferencia-bg" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer"
+                />
+                <div class="tema-conferencia-overlay"></div>
+                <div class="tema-conferencia-content">
+                  <h4>Liderazgo Humanista y Cultura de Confianza</h4>
+                  <p>Claves psicológicas para la toma de decisiones bajo incertidumbre, gestión de la empatía ejecutiva y construcción de entornos libres de burnout.</p>
+                </div>
               </div>
 
+              <!-- Conferencia 3: Resiliencia, Propósito y Logoterapia en Tiempos de Cambio -->
               <div class="tema-conferencia-card">
-                <h4>Resiliencia, Propósito y Logoterapia en Tiempos de Cambio</h4>
-                <p>Un viaje reflexivo basado en la logoterapia y psicología humanista para transformar crisis en oportunidades de crecimiento personal y profesional.</p>
+                <img 
+                  src="/src/assets/images/conf_resiliencia_1787865495542.jpg" 
+                  alt="Resiliencia, Propósito y Logoterapia en Tiempos de Cambio" 
+                  class="tema-conferencia-bg" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer"
+                />
+                <div class="tema-conferencia-overlay"></div>
+                <div class="tema-conferencia-content">
+                  <h4>Resiliencia, Propósito y Logoterapia en Tiempos de Cambio</h4>
+                  <p>Un viaje reflexivo basado en la logoterapia y psicología humanista para transformar crisis en oportunidades de crecimiento personal y profesional.</p>
+                </div>
               </div>
 
             </div>
