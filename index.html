@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaime Vargas | Psicología y Comunicación</title>
   <meta name="description" content="Sitio oficial de Jaime Vargas. Confluencia entre psicología clínica, neurodiversidad, conferencias de alto impacto, capacitación y asesoría estratégica.">
+  <meta name="theme-color" content="#100C12">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jaime Vargas | Psicología y Comunicación">
+  <meta property="og:description" content="Psicología clínica, neurodiversidad en adultos, conferencias de alto impacto, capacitación y asesoría estratégica.">
+  <meta property="og:image" content="/src/assets/images/regenerated_image_1787409671183.png">
   
   <!-- Fuentes Tipográficas Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -5473,6 +5478,16 @@
     const PODCAST_FALLBACK_IMAGE = 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/43844694/43844694-1756161186262-096e692f8618b.jpg';
     let podcastEpisodesCache = null;
 
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
     function formatPodcastDuration(durationStr) {
       if (!durationStr) return '16 min';
       if (typeof durationStr === 'string' && durationStr.includes(':')) {
@@ -5530,12 +5545,16 @@
         const formattedDur = formatPodcastDuration(ep.duration);
         const spotifyBtnText = currentDict.podcastListenSpotify || 'Escuchar en Spotify';
 
+        const safeTitle = escapeHtml(ep.title);
+        const safeDesc = escapeHtml(ep.cleanDescription);
+        const safeEpNum = escapeHtml(ep.episodeNum);
+
         html += `
           <article class="podcast-episode-card">
             <div class="episode-thumb-container">
               <img 
                 src="${ep.imageUrl || PODCAST_FALLBACK_IMAGE}" 
-                alt="${ep.title.replace(/"/g, '&quot;')}" 
+                alt="${safeTitle}" 
                 class="episode-thumb" 
                 loading="lazy" 
                 referrerpolicy="no-referrer" 
@@ -5553,10 +5572,10 @@
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                   ${formattedDate}
                 </span>
-                ${ep.episodeNum ? `<span class="episode-number-badge">Ep. ${ep.episodeNum}</span>` : ''}
+                ${safeEpNum ? `<span class="episode-number-badge">Ep. ${safeEpNum}</span>` : ''}
               </div>
-              <h4 class="episode-card-title">${ep.title}</h4>
-              <p class="episode-card-excerpt">${ep.cleanDescription}</p>
+              <h4 class="episode-card-title">${safeTitle}</h4>
+              <p class="episode-card-excerpt">${safeDesc}</p>
               
               ${ep.audioUrl ? `
               <div class="episode-player-row">
