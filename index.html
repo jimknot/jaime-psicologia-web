@@ -1969,26 +1969,124 @@
     }
 
     .talleres-preview-item {
-      background: #140f1a;
-      border: 1px solid rgba(150, 16, 217, 0.15);
-      border-radius: 8px;
-      padding: 18px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(150, 16, 217, 0.28);
+      box-shadow: 0 10px 28px rgba(10, 6, 20, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 290px;
+      background: #0f0a17;
+      transition: var(--transicion-suave);
+    }
+
+    .talleres-preview-item:hover {
+      border-color: rgba(150, 16, 217, 0.55);
+      box-shadow: 0 16px 36px rgba(150, 16, 217, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .talleres-preview-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1;
+    }
+
+    .talleres-preview-item:hover .talleres-preview-bg {
+      transform: scale(1.06);
+    }
+
+    .talleres-preview-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13, 8, 22, 0.80) 0%, rgba(13, 8, 22, 0.95) 100%);
+      z-index: 2;
+      backdrop-filter: blur(1.5px);
+      -webkit-backdrop-filter: blur(1.5px);
+      transition: background 0.3s ease;
+    }
+
+    .talleres-preview-item:hover .talleres-preview-overlay {
+      background: linear-gradient(180deg, rgba(13, 8, 22, 0.72) 0%, rgba(13, 8, 22, 0.90) 100%);
+    }
+
+    .talleres-preview-content {
+      position: relative;
+      z-index: 3;
+      padding: 22px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .talleres-preview-content-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .talleres-preview-item h5 {
-      color: #f3e8ff;
+      color: #ffffff;
+      font-family: var(--font-heading);
       font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin: 0;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
     }
 
     .talleres-preview-item p {
-      color: #ffffff;
+      color: #e5def5 !important;
       font-size: 0.92rem;
-      line-height: 1.45;
+      line-height: 1.5;
+      margin: 0;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .talleres-preview-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(150, 16, 217, 0.88);
+      color: #ffffff !important;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      text-decoration: none;
+      transition: var(--transicion-suave);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    .talleres-preview-btn:hover {
+      background: var(--purpura-electrico);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 6px 20px rgba(150, 16, 217, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .talleres-preview-btn svg {
+      transition: transform 0.2s ease;
+    }
+
+    .talleres-preview-btn:hover svg {
+      transform: translateX(4px);
     }
 
     /* Regla general y selectores de foco para párrafos en servicios */
@@ -4097,26 +4195,98 @@
             </div>
 
             <div class="talleres-preview-grid">
+              <!-- Caja 1: Servicios para individuos -->
               <div class="talleres-preview-item">
-                <h5>🏢 Psicología Organizacional (B2B)</h5>
-                <p>Consultoría estratégica, evaluación de clima laboral, capacitación en habilidades blandas y bienestar corporativo anti-burnout.</p>
+                <img 
+                  src="/src/assets/images/servicios_individuos_1787864830999.jpg" 
+                  alt="Servicios para individuos" 
+                  class="talleres-preview-bg" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer"
+                />
+                <div class="talleres-preview-overlay"></div>
+                <div class="talleres-preview-content">
+                  <div class="talleres-preview-content-body">
+                    <h5 data-i18n="talleresBoxTitle1">👤 Servicios para individuos</h5>
+                    <p data-i18n="talleresBoxDesc1">Acompañamiento individual en autoimagen, superación de bloqueos emocionales, relaciones afectivas y desarrollo de habilidades intrapersonales.</p>
+                  </div>
+                  <a href="charlas.html" class="talleres-preview-btn">
+                    <span data-i18n="talleresBoxBtn1">Ver portafolio</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
               </div>
 
+              <!-- Caja 2: Servicios para Empresas -->
               <div class="talleres-preview-item">
-                <h5>🎓 Psicología Educativa (B2C / Instituciones)</h5>
-                <p>Regulación de ansiedad académica, preparación de alto rendimiento para exámenes, orientación vocacional y autoestima formativa.</p>
+                <img 
+                  src="/src/assets/images/b2b_organizacional_1787864493847.jpg" 
+                  alt="Servicios para Empresas" 
+                  class="talleres-preview-bg" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer"
+                />
+                <div class="talleres-preview-overlay"></div>
+                <div class="talleres-preview-content">
+                  <div class="talleres-preview-content-body">
+                    <h5 data-i18n="talleresBoxTitle2">🏢 Servicios para Empresas</h5>
+                    <p data-i18n="talleresBoxDesc2">Consultoría estratégica, evaluación de clima laboral, capacitación en habilidades blandas y programas de bienestar corporativo anti-burnout.</p>
+                  </div>
+                  <a href="charlas.html" class="talleres-preview-btn">
+                    <span data-i18n="talleresBoxBtn2">Ver portafolio</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
               </div>
 
+              <!-- Caja 3: Servicios para instituciones educativas -->
               <div class="talleres-preview-item">
-                <h5>🎯 Pruebas Aptitudinales MMI*</h5>
-                <p>Entrenamiento especializado en Mini Entrevistas Múltiples (MMI) para aspirantes a residencias médicas y programas de postgrado.</p>
+                <img 
+                  src="/src/assets/images/b2c_educativa_1787864508677.jpg" 
+                  alt="Servicios para instituciones educativas" 
+                  class="talleres-preview-bg" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer"
+                />
+                <div class="talleres-preview-overlay"></div>
+                <div class="talleres-preview-content">
+                  <div class="talleres-preview-content-body">
+                    <h5 data-i18n="talleresBoxTitle3">🎓 Servicios para instituciones educativas</h5>
+                    <p data-i18n="talleresBoxDesc3">Regulación de ansiedad académica, preparación de alto rendimiento para exámenes, orientación vocacional y talleres estudiantiles.</p>
+                  </div>
+                  <a href="charlas.html" class="talleres-preview-btn">
+                    <span data-i18n="talleresBoxBtn3">Ver portafolio</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Caja 4: Aplicación de Pruebas Aptitudinales -->
+              <div class="talleres-preview-item">
+                <img 
+                  src="/src/assets/images/mmi_aptitudinal_1787864521505.jpg" 
+                  alt="Aplicación de Pruebas Aptitudinales" 
+                  class="talleres-preview-bg" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer"
+                />
+                <div class="talleres-preview-overlay"></div>
+                <div class="talleres-preview-content">
+                  <div class="talleres-preview-content-body">
+                    <h5 data-i18n="talleresBoxTitle4">🎯 Aplicación de Pruebas Aptitudinales</h5>
+                    <p data-i18n="talleresBoxDesc4">Entrenamiento especializado en Mini Entrevistas Múltiples (MMI) y evaluación de aptitudes para aspirantes a residencias médicas y postgrados.</p>
+                  </div>
+                  <a href="charlas.html" class="talleres-preview-btn">
+                    <span data-i18n="talleresBoxBtn4">Ver portafolio</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-            <a href="charlas.html" class="btn btn-primary" data-i18n="servTallBtn">Ver Portafolio de Capacitación & Talleres</a>
-            <a href="#contacto" class="btn" style="background: rgba(150, 16, 217, 0.15); border: 1px solid var(--purpura-borde); color: #ffffff;" onclick="seleccionarServicio('Capacitación y Talleres')">Cotizar Programa a Medida</a>
+            <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Capacitación y Talleres')">Cotizar Programa a Medida</a>
           </div>
         </div>
 
@@ -4607,6 +4777,18 @@
         servTallTag: "Formación Ejecutiva & Grupal",
         servTallDesc: "Entrenamientos interactivos orientados a desarrollar habilidades críticas en comunicación interpersonal, empatía y bienestar organizacional.",
         servTallBtn: "Ver Portafolio de Capacitación & Talleres",
+        talleresBoxTitle1: "👤 Servicios para individuos",
+        talleresBoxDesc1: "Acompañamiento individual en autoimagen, superación de bloqueos emocionales, relaciones afectivas y desarrollo de habilidades intrapersonales.",
+        talleresBoxBtn1: "Ver portafolio",
+        talleresBoxTitle2: "🏢 Servicios para Empresas",
+        talleresBoxDesc2: "Consultoría estratégica, evaluación de clima laboral, capacitación en habilidades blandas y programas de bienestar corporativo anti-burnout.",
+        talleresBoxBtn2: "Ver portafolio",
+        talleresBoxTitle3: "🎓 Servicios para instituciones educativas",
+        talleresBoxDesc3: "Regulación de ansiedad académica, preparación de alto rendimiento para exámenes, orientación vocacional y talleres estudiantiles.",
+        talleresBoxBtn3: "Ver portafolio",
+        talleresBoxTitle4: "🎯 Aplicación de Pruebas Aptitudinales",
+        talleresBoxDesc4: "Entrenamiento especializado en Mini Entrevistas Múltiples (MMI) y evaluación de aptitudes para aspirantes a residencias médicas y postgrados.",
+        talleresBoxBtn4: "Ver portafolio",
         servAsesTitle: "Asesoría Psicológica & Acompañamiento",
         servAsesTag: "Atención Clínica Individual",
         servAsesP1: "Un espacio seguro y estrictamente confidencial, concebido para brindar la tranquilidad y la comodidad que cada consultante necesita al iniciar su proceso. Aquí, la privacidad es la base sobre la cual se construye una relación de confianza mutua, libre de juicios y orientada al bienestar integral.",
@@ -4738,6 +4920,18 @@
         servTallTag: "Executive & Team Development",
         servTallDesc: "Interactive training programs designed to cultivate critical skills in interpersonal communication, emotional empathy, and organizational resilience.",
         servTallBtn: "View Workshops & Training Portfolio",
+        talleresBoxTitle1: "👤 Individual Services",
+        talleresBoxDesc1: "Personalized guidance in self-image, overcoming emotional blocks, romantic relationships, and intrapersonal growth.",
+        talleresBoxBtn1: "View Portfolio",
+        talleresBoxTitle2: "🏢 Corporate & Enterprise Services",
+        talleresBoxDesc2: "Strategic consulting, workplace climate evaluation, soft skills development, and executive burnout prevention.",
+        talleresBoxBtn2: "View Portfolio",
+        talleresBoxTitle3: "🎓 Educational Institutions Services",
+        talleresBoxDesc3: "Academic anxiety regulation, high-performance exam readiness, vocational guidance, and student empowerment workshops.",
+        talleresBoxBtn3: "View Portfolio",
+        talleresBoxTitle4: "🎯 Aptitude Testing & MMI Assessment",
+        talleresBoxDesc4: "Specialized Multiple Mini Interview (MMI) training and cognitive aptitude assessments for medical residency and postgraduate applicants.",
+        talleresBoxBtn4: "View Portfolio",
         servAsesTitle: "Psychological Counseling & Guidance",
         servAsesTag: "Individual Clinical Care",
         servAsesP1: "A secure, strictly confidential sanctuary designed to provide the safety, clarity, and peace of mind each client needs when beginning their journey. Here, utmost privacy forms the cornerstone of a trusting relationship, free of judgment and dedicated to lasting wellbeing.",
