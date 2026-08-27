@@ -2223,6 +2223,96 @@
       padding: 95px 0;
     }
 
+    .libros-construccion-wrap {
+      max-width: 860px;
+      margin: 40px auto 0 auto;
+      background: #FFFFFF;
+      border: 1px solid rgba(150, 16, 217, 0.22);
+      border-radius: var(--radio-borde);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(10, 22, 40, 0.06), 0 4px 18px rgba(150, 16, 217, 0.06);
+      transition: var(--transicion-suave);
+      position: relative;
+    }
+
+    .libros-construccion-wrap:hover {
+      border-color: rgba(150, 16, 217, 0.42);
+      box-shadow: 0 20px 48px rgba(10, 22, 40, 0.1), 0 6px 22px rgba(150, 16, 217, 0.12);
+    }
+
+    .libros-construccion-img-box {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      background: #0d0718;
+    }
+
+    @media (max-width: 768px) {
+      .libros-construccion-img-box {
+        height: 240px;
+      }
+    }
+
+    .libros-construccion-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .libros-construccion-wrap:hover .libros-construccion-img {
+      transform: scale(1.03);
+    }
+
+    .libros-construccion-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13, 7, 24, 0.12) 0%, rgba(13, 7, 24, 0.78) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 32px;
+    }
+
+    .libros-construccion-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(150, 16, 217, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      align-self: flex-start;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .libros-construccion-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ffd166;
+      display: inline-block;
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+
+    .libros-construccion-title {
+      color: #ffffff;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
     .libro-destacado-card {
       background: #FFFFFF;
       border: 1px solid rgba(150, 16, 217, 0.18);
@@ -2240,7 +2330,7 @@
 
     .libro-destacado-grid {
       display: grid;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 380px 1fr;
       gap: 44px;
       align-items: center;
     }
@@ -2250,12 +2340,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
     }
 
     .libro-portada-glow {
       position: absolute;
-      width: 220px;
-      height: 220px;
+      width: 260px;
+      height: 260px;
       background: radial-gradient(circle, rgba(150, 16, 217, 0.25) 0%, rgba(24, 37, 100, 0) 70%);
       filter: blur(25px);
       pointer-events: none;
@@ -2268,8 +2359,9 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 18px 38px rgba(24, 37, 100, 0.16), -6px 8px 22px rgba(150, 16, 217, 0.12);
-      border: none;
+      border: 1px solid rgba(150, 16, 217, 0.25);
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
     }
 
     .libro-portada-frame:hover {
@@ -2278,7 +2370,8 @@
 
     .libro-portada-img {
       width: 100%;
-      max-width: 280px;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
       height: auto;
       display: block;
       object-fit: cover;
@@ -3063,6 +3156,9 @@
       color: #9d96a8;
       padding: 75px 0 32px;
       overflow: hidden;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
     }
 
     footer.site-footer::before {
@@ -3081,12 +3177,15 @@
       grid-template-columns: 1fr;
       gap: 36px;
       margin-bottom: 40px;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
     }
 
     .footer-brand p {
       margin-top: 14px;
       font-size: 0.9rem;
-      color: #837c8e;
+      color: #a89fc0;
       line-height: 1.6;
       max-width: 480px;
     }
@@ -3109,7 +3208,7 @@
 
     .footer-links a {
       font-size: 0.88rem;
-      color: #9d96a8;
+      color: #b5adc7;
     }
 
     .footer-links a:hover {
@@ -3147,15 +3246,23 @@
     }
 
     .footer-bottom {
-      border-top: 1px solid var(--gris-humo);
+      border-top: 1px solid rgba(150, 16, 217, 0.25);
       padding-top: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 12px;
-      font-size: 0.82rem;
-      color: #716a7d;
+      font-size: 0.85rem;
+      color: #b3a9c7;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+
+    .footer-bottom strong {
+      color: #ffffff;
+      font-weight: 600;
     }
 
     /* ==========================================================================
@@ -3698,7 +3805,7 @@
         />
         <div class="brand-name">
           <span class="brand-name-title">JAIME VARGAS</span>
-          <span class="brand-name-subtitle" data-i18n="brandSubtitle">PSICOLOGÍA & COMUNICACIÓN</span>
+          <span class="brand-name-subtitle" data-i18n="brandSubtitle">EL PSICO</span>
         </div>
       </a>
 
@@ -3940,11 +4047,6 @@
               </div>
 
               <div class="tema-conferencia-card">
-                <h4>Gestión del Miedo Escénico y Presencia Ejecutiva</h4>
-                <p>Herramientas neurofisiológicas y conductuales para regular la ansiedad al hablar en público, modular la voz y proyectar autoridad serena.</p>
-              </div>
-
-              <div class="tema-conferencia-card">
                 <h4>Resiliencia, Propósito y Logoterapia en Tiempos de Cambio</h4>
                 <p>Un viaje reflexivo basado en la logoterapia y psicología humanista para transformar crisis en oportunidades de crecimiento personal y profesional.</p>
               </div>
@@ -4084,101 +4186,30 @@
     <section id="libros" class="libros-section">
       <div class="container">
         <div class="section-header-light reveal-on-scroll">
-          <h2 data-i18n="booksTitle">Publicaciones</h2>
+          <h2 data-i18n="booksTitle">Publicaciones & Ensayos</h2>
           <p class="section-desc-light" data-i18n="booksDesc">
-            Textos concebidos para profundizar en los mecanismos de la mente humana, la comunicación de alta influencia y la reconstrucción del bienestar emocional con rigor clínico.
+            Próximamente compartiremos en este espacio libros, ensayos especializados y guías prácticas dedicadas al estudio de la mente humana, la psicología del comportamiento y el desarrollo de una comunicación asertiva de alto impacto.
           </p>
         </div>
 
-        <!-- Libro Destacado Principal -->
-        <div class="libro-destacado-card reveal-on-scroll reveal-delay-100">
-          <div class="libro-destacado-grid">
-            
-            <!-- Columna Portada Visual -->
-            <div class="libro-portada-wrap">
-              <div class="libro-portada-glow"></div>
-              <div class="libro-portada-frame">
-                <img 
-                  src="/src/assets/images/libro_portada_vargas_1787409007626.jpg" 
-                  alt="Portada del libro El Poder de la Palabra Consciente por Jaime Vargas" 
-                  class="libro-portada-img" 
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                />
-                <span class="libro-badge-flotante" data-i18n="bookBadge">OBRA PRINCIPAL</span>
+        <!-- Banner Ilustrativo: Espacio en Construcción -->
+        <div class="libros-construccion-wrap reveal-on-scroll reveal-delay-100">
+          <div class="libros-construccion-img-box">
+            <img 
+              src="/src/assets/images/seccion_en_construccion_1787862778424.jpg" 
+              alt="Ilustración conceptual de sección en construcción y redacción editorial" 
+              class="libros-construccion-img"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="libros-construccion-overlay">
+              <div class="libros-construccion-badge">
+                <span class="libros-construccion-badge-dot"></span>
+                <span data-i18n="booksUnderConstructionBadge">ESPACIO EN CONSTRUCCIÓN • PRÓXIMAMENTE</span>
               </div>
             </div>
-
-            <!-- Columna Información & Sinopsis -->
-            <div class="libro-info-col">
-              <div class="libro-meta-header">
-                <span class="libro-tag-cat" data-i18n="bookCat">PSICOLOGÍA & COMUNICACIÓN ESTRATÉGICA</span>
-                <span class="libro-anio-badge" data-i18n="bookEdition">2ª Edición Revisada (2026)</span>
-              </div>
-
-              <h3 class="libro-titulo" data-i18n="bookTitle">El Poder de la Palabra Consciente</h3>
-              <p class="libro-subtitulo" data-i18n="bookSubtitle">
-                La arquitectura del lenguaje, modulación de emociones y el arte del discurso con impacto ético.
-              </p>
-
-              <p class="libro-sinopsis" data-i18n="bookSynopsis">
-                En esta obra de referencia, Jaime Vargas desentraña cómo la neurobiología del lenguaje y los sesgos cognitivos condicionan nuestras decisiones cotidianas y profesionales. Una guía imprescindible para líderes, oradores y profesionales que buscan comunicar con solvencia sin perder autenticidad humana.
-              </p>
-
-              <!-- Puntos Clave Desarrollados -->
-              <div class="libro-puntos-clave">
-                <h4 class="libro-puntos-title" data-i18n="bookKeyPointsTitle">Puntos clave desarrollados en el libro:</h4>
-                <ul class="libro-puntos-list">
-                  <li>
-                    <svg class="libro-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span data-i18n="bookPoint1">Mapeo de la ansiedad escénica y reprogramación de patrones discursivos limitantes.</span>
-                  </li>
-                  <li>
-                    <svg class="libro-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span data-i18n="bookPoint2">Estructuración lógica de argumentos para negociaciones de alta complejidad.</span>
-                  </li>
-                  <li>
-                    <svg class="libro-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span data-i18n="bookPoint3">Neurodiversidad en el diálogo: puentes de comprensión para estilos cognitivos divergentes.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Formatos y Disponibilidad -->
-              <div class="libro-formatos-box">
-                <span class="libro-formatos-label" data-i18n="bookFormatsLabel">Formatos disponibles:</span>
-                <div class="libro-formatos-pills">
-                  <span class="formato-pill">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                    <span data-i18n="bookFmt1">Tapa Dura & Rústica</span>
-                  </span>
-                  <span class="formato-pill">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                    <span data-i18n="bookFmt2">E-Book (Kindle / ePub)</span>
-                  </span>
-                  <span class="formato-pill">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
-                    <span data-i18n="bookFmt3">Audiolibro</span>
-                  </span>
-                </div>
-              </div>
-
-              <!-- Botones de Acción -->
-              <div class="libro-actions">
-                <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Consulta sobre Libros / Editorial')">
-                  <span data-i18n="bookBuyBtn">Adquirir Ejemplar</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-                <button type="button" class="btn btn-outline-light" onclick="mostrarCapituloModal()">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                  <span data-i18n="bookSampleBtn">Capítulo de Muestra</span>
-                </button>
-              </div>
-            </div>
-
           </div>
         </div>
-
       </div>
     </section>
 
@@ -4424,7 +4455,7 @@
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-top reveal-on-scroll">
+      <div class="footer-top">
         <div class="footer-brand">
           <div class="brand-logo-wrap">
             <img 
@@ -4437,7 +4468,7 @@
             />
             <div class="brand-name">
               <span class="brand-name-title">JAIME VARGAS</span>
-              <span class="brand-name-subtitle" data-i18n="brandSubtitle">PSICOLOGÍA & COMUNICACIÓN</span>
+              <span class="brand-name-subtitle" data-i18n="brandSubtitle">EL PSICO</span>
             </div>
           </div>
           <p data-i18n="footerQuote">
@@ -4484,12 +4515,12 @@
         </div>
       </div>
 
-      <div class="footer-bottom reveal-on-scroll reveal-delay-150">
+      <div class="footer-bottom">
         <div data-i18n="footerCopyright">
           © 2026 <strong>Jaime Vargas</strong>. Todos los derechos reservados.
         </div>
         <div data-i18n="footerValues">
-          Jaime Vargas | Psicología y Comunicación
+          Jaime vargas | El Psico
         </div>
       </div>
     </div>
@@ -4530,7 +4561,7 @@
     // ==========================================================================
     const i18nDiccionario = {
       es: {
-        brandSubtitle: "PSICOLOGÍA & COMUNICACIÓN",
+        brandSubtitle: "EL PSICO",
         navHome: "Inicio",
         navBio: "Biografía",
         navServices: "Servicios",
@@ -4585,25 +4616,27 @@
         servDuelTag: "Procesos Afectivos & Transiciones",
         servDuelDesc: "Un espacio de contención clínica riguroso y humano, diseñado para transitar el impacto de la pérdida y procesar el dolor desde una perspectiva integradora. A través de un abordaje conductual-humanista, este proceso ofrece las herramientas necesarias para comprender la complejidad de la separación, aliviar la carga emocional y reestructurar el bienestar integral.",
         servDuelBtn: "Agendar Acompañamiento",
-        booksTitle: "Publicaciones",
+        booksTitle: "Publicaciones & Ensayos",
         booksSubtitle: "Obras Editoriales & Ensayo Psicológico",
-        booksDesc: "Textos concebidos para profundizar en los mecanismos de la mente humana, la comunicación de alta influencia y la reconstrucción del bienestar emocional con rigor clínico.",
-        bookBadge: "OBRA PRINCIPAL",
-        bookCat: "PSICOLOGÍA & COMUNICACIÓN ESTRATÉGICA",
-        bookEdition: "2ª Edición Revisada (2026)",
-        bookTitle: "El Poder de la Palabra Consciente",
-        bookSubtitle: "La arquitectura del lenguaje, modulación de emociones y el arte del discurso con impacto ético.",
-        bookSynopsis: "En esta obra de referencia, Jaime Vargas desentraña cómo la neurobiología del lenguaje y los sesgos cognitivos condicionan nuestras decisiones cotidianas y profesionales. Una guía imprescindible para líderes, oradores y profesionales que buscan comunicar con solvencia sin perder autenticidad humana.",
-        bookKeyPointsTitle: "Puntos clave desarrollados en el libro:",
-        bookPoint1: "Mapeo de la ansiedad escénica y reprogramación de patrones discursivos limitantes.",
-        bookPoint2: "Estructuración lógica de argumentos para negociaciones de alta complejidad.",
-        bookPoint3: "Neurodiversidad en el diálogo: puentes de comprensión para estilos cognitivos divergentes.",
-        bookFormatsLabel: "Formatos disponibles:",
-        bookFmt1: "Tapa Dura & Rústica",
-        bookFmt2: "E-Book (Kindle / ePub)",
-        bookFmt3: "Audiolibro",
-        bookBuyBtn: "Adquirir Ejemplar",
-        bookSampleBtn: "Capítulo de Muestra",
+        booksDesc: "Próximamente compartiremos en este espacio libros, ensayos especializados y guías prácticas dedicadas al estudio de la mente humana, la psicología del comportamiento y el desarrollo de una comunicación asertiva de alto impacto.",
+        booksUnderConstructionBadge: "ESPACIO EN CONSTRUCCIÓN • PRÓXIMAMENTE",
+        booksUnderConstructionTitle: "Curaduría y Redacción Editorial en Proceso",
+        bookBadge: "EN PREPARACIÓN • 2026",
+        bookCat: "PSICOLOGÍA & COMUNICACIÓN ASERTIVA",
+        bookEdition: "Próximos Lanzamientos Editoriales",
+        bookTitle: "Nuevas Obras y Guías Especializadas en Desarrollo",
+        bookSubtitle: "La confluencia entre la ciencia del comportamiento, la modulación emocional y el arte de comunicar con claridad y propósito.",
+        bookSynopsis: "Actualmente nos encontramos trabajando en una serie de publicaciones editoriales y ensayos dedicados a explorar la intersección entre la psicología humana, el manejo asertivo del lenguaje y la resolución consciente de conflictos. Muy pronto podrás acceder a análisis profundos, herramientas aplicadas y reflexiones orientadas a cultivar una presencia auténtica y una comunicación con propósito.",
+        bookKeyPointsTitle: "Líneas temáticas que se abordarán en este espacio:",
+        bookPoint1: "Psicología y Comunicación Asertiva: límites claros, empatía estratégica y expresión consciente.",
+        bookPoint2: "Regulación Emocional y Presencia: superación del miedo escénico y solidez discursiva.",
+        bookPoint3: "Duelo, Resiliencia y Logoterapia: marcos cognitivos para navegar transiciones vitales complejas.",
+        bookFormatsLabel: "Formatos previstos de publicación:",
+        bookFmt1: "Libros Impresos & Ensayos",
+        bookFmt2: "E-Books & Guías Digitales",
+        bookFmt3: "Materiales Descargables",
+        bookBuyBtn: "Pre-registro & Consultas Editoriales",
+        bookSampleBtn: "Consultar por WhatsApp",
         podcastTitle: "La Píldora Blanca Podcast ⚪",
         podcastSubtitle: "Psicología, Filosofía & Modernidad",
         podcastDesc: "La píldora blanca explora los acontecimientos y narrativas del mundo contemporáneo desde una perspectiva objetiva y perspicaz. Conducido por <strong>Jaime Vargas</strong>, un espacio donde la psicología, la filosofía y la modernidad se unen para comprender nuestra realidad.",
@@ -4649,7 +4682,7 @@
         footerBooksLink: "Publicaciones & Ensayos",
         footerPodcastLink: "Episodios de Podcast",
         footerCopyright: "© 2026 <strong>Jaime Vargas</strong>. Todos los derechos reservados.",
-        footerValues: "Jaime Vargas | Psicología y Comunicación",
+        footerValues: "Jaime vargas | El Psico",
         placeholderName: "Ej. Ana Rodríguez",
         placeholderPhone: "Ej. +34 600 000 000",
         placeholderEmail: "tu@correo.com",
@@ -4659,7 +4692,7 @@
         toastSampleMsg: "Se ha generado la previsualización de «El Poder de la Palabra Consciente». Redirigiendo a la descarga en PDF..."
       },
       en: {
-        brandSubtitle: "PSYCHOLOGY & COMMUNICATION",
+        brandSubtitle: "EL PSICO",
         navHome: "Home",
         navBio: "Biography",
         navServices: "Services",
@@ -4714,25 +4747,27 @@
         servDuelTag: "Emotional Processing & Life Transitions",
         servDuelDesc: "A rigorous, deeply compassionate clinical space designed to process the weight of loss and emotional pain from an integrative perspective. Combining behavioral insights with humanistic care, this process provides essential tools to navigate separation, relieve emotional strain, and reconstruct inner peace.",
         servDuelBtn: "Schedule Grief Support",
-        booksTitle: "Publications",
+        booksTitle: "Publications & Essays",
         booksSubtitle: "Published Works & Psychological Essays",
-        booksDesc: "Thoughtfully crafted works delving into the mechanics of the human mind, influential communication, and the clinical reconstruction of emotional wellbeing.",
-        bookBadge: "FEATURED WORK",
-        bookCat: "PSYCHOLOGY & STRATEGIC COMMUNICATION",
-        bookEdition: "2nd Revised Edition (2026)",
-        bookTitle: "The Power of the Conscious Word",
-        bookSubtitle: "The architecture of language, emotional modulation, and the art of ethical discourse.",
-        bookSynopsis: "In this seminal book, Jaime Vargas unpacks how the neurobiology of language and cognitive biases shape our daily and professional decisions. An indispensable guide for leaders, public speakers, and professionals striving to communicate with authority while preserving human authenticity.",
-        bookKeyPointsTitle: "Core takeaways explored in the book:",
-        bookPoint1: "Mapping stage anxiety and reprogramming limiting communicative patterns.",
-        bookPoint2: "Logical structuring of persuasive arguments for high-stakes negotiations.",
-        bookPoint3: "Neurodiversity in dialogue: building bridges across diverse cognitive styles.",
-        bookFormatsLabel: "Available formats:",
-        bookFmt1: "Hardcover & Paperback",
-        bookFmt2: "E-Book (Kindle / ePub)",
-        bookFmt3: "Audiobook",
-        bookBuyBtn: "Get Your Copy",
-        bookSampleBtn: "Read Sample Chapter",
+        booksDesc: "Soon in this space, we will be sharing upcoming books, specialized essays, and practical guides dedicated to human behavioral psychology, emotional regulation, and assertive communication.",
+        booksUnderConstructionBadge: "UNDER CONSTRUCTION • COMING SOON",
+        booksUnderConstructionTitle: "Editorial Curation & Writing in Progress",
+        bookBadge: "IN PREPARATION • 2026",
+        bookCat: "PSYCHOLOGY & ASSERTIVE COMMUNICATION",
+        bookEdition: "Upcoming Editorial Releases",
+        bookTitle: "New Specialized Books & Guides in Development",
+        bookSubtitle: "Bridging behavioral science, emotional modulation, and the art of purposeful communication.",
+        bookSynopsis: "We are currently preparing a series of editorial publications and essays dedicated to exploring the intersection between human psychology, assertive language management, and conscious conflict resolution. Soon you will have access to in-depth insights, practical tools, and reflections designed to cultivate an authentic presence and communication with purpose.",
+        bookKeyPointsTitle: "Core themes coming soon to this space:",
+        bookPoint1: "Psychology & Assertive Communication: setting boundaries, strategic empathy, and conscious expression.",
+        bookPoint2: "Emotional Regulation & Presence: conquering stage anxiety and delivering confident discourse.",
+        bookPoint3: "Grief, Resilience & Logotherapy: cognitive frameworks to navigate complex life transitions.",
+        bookFormatsLabel: "Planned publication formats:",
+        bookFmt1: "Print Books & Essays",
+        bookFmt2: "E-Books & Digital Guides",
+        bookFmt3: "Downloadable Resources",
+        bookBuyBtn: "Early Registration & Inquiries",
+        bookSampleBtn: "Inquire via WhatsApp",
         podcastTitle: "The White Pill Podcast ⚪",
         podcastSubtitle: "Psychology, Philosophy & Modernity",
         podcastDesc: "The White Pill explores contemporary events and modern narratives with objective insight and sharp analytical depth. Hosted by <strong>Jaime Vargas</strong>, it provides an intellectual space where psychology, philosophy, and modernity converge to decode our world.",
@@ -4778,7 +4813,7 @@
         footerBooksLink: "Publications & Essays",
         footerPodcastLink: "Podcast Episodes",
         footerCopyright: "© 2026 <strong>Jaime Vargas</strong>. All rights reserved.",
-        footerValues: "Jaime Vargas | Psychology & Communication",
+        footerValues: "Jaime vargas | El Psico",
         placeholderName: "e.g., Sarah Johnson",
         placeholderPhone: "e.g., +1 (555) 000-0000",
         placeholderEmail: "name@example.com",
@@ -4990,8 +5025,8 @@
 
       const observerOptions = {
         root: null,
-        rootMargin: '0px 0px -50px 0px',
-        threshold: 0.08
+        rootMargin: '0px 0px 40px 0px',
+        threshold: 0.02
       };
 
       const observer = new IntersectionObserver((entries, obs) => {
