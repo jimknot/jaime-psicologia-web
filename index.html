@@ -1833,6 +1833,295 @@
       flex-shrink: 0;
     }
 
+    /* Grilla y Tarjetas para Módulo de Servicios para Empresas */
+    .empresas-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0 16px;
+    }
+
+    .empresas-card {
+      background: linear-gradient(180deg, #181222 0%, #120d1a 100%);
+      border: 1px solid rgba(150, 16, 217, 0.32);
+      border-radius: 14px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: var(--transicion-suave);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .empresas-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #9610d9, #c4b5fd);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .empresas-card:hover {
+      border-color: rgba(150, 16, 217, 0.65);
+      background: linear-gradient(180deg, #1e162c 0%, #150f1f 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(150, 16, 217, 0.18), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .empresas-card:hover::before {
+      opacity: 1;
+    }
+
+    .empresas-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(150, 16, 217, 0.2);
+    }
+
+    .empresas-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(150, 16, 217, 0.22);
+      border: 1px solid rgba(150, 16, 217, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d8b4fe;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(150, 16, 217, 0.25);
+    }
+
+    .empresas-card-title {
+      font-family: var(--font-display);
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .empresas-card-text {
+      font-size: 0.94rem;
+      color: #e2d9f3;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .empresas-card-subheading {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #d8b4fe;
+      margin-bottom: 12px;
+    }
+
+    .empresas-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+    }
+
+    .empresas-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.93rem;
+      color: #ffffff !important;
+      line-height: 1.5;
+    }
+
+    .empresas-feature-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c084fc;
+      box-shadow: 0 0 8px #9610d9;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .empresas-card-note {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(150, 16, 217, 0.25);
+      font-size: 0.83rem;
+      color: #c4b5fd;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* Grilla y Tarjetas para Módulo de Servicios Educativos */
+    .educativas-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 32px 0 16px;
+    }
+
+    .educativas-card {
+      background: linear-gradient(180deg, #181222 0%, #120d1a 100%);
+      border: 1px solid rgba(150, 16, 217, 0.28);
+      border-radius: 14px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      transition: var(--transicion-suave);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .educativas-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #9610d9, #818cf8);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .educativas-card:hover {
+      border-color: rgba(150, 16, 217, 0.65);
+      background: linear-gradient(180deg, #1e162c 0%, #150f1f 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(150, 16, 217, 0.18), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .educativas-card:hover::before {
+      opacity: 1;
+    }
+
+    .educativas-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(150, 16, 217, 0.22);
+      border: 1px solid rgba(150, 16, 217, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d8b4fe;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(150, 16, 217, 0.25);
+    }
+
+    .educativas-card-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .educativas-card-desc {
+      font-size: 0.92rem;
+      color: #e2d9f3;
+      line-height: 1.6;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    /* Grilla y Tarjetas para Módulo de Servicios para Médicos */
+    .medicos-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0 16px;
+    }
+
+    .medicos-card {
+      background: linear-gradient(180deg, #181222 0%, #120d1a 100%);
+      border: 1px solid rgba(150, 16, 217, 0.32);
+      border-radius: 14px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: var(--transicion-suave);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .medicos-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #9610d9, #38bdf8);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .medicos-card:hover {
+      border-color: rgba(150, 16, 217, 0.65);
+      background: linear-gradient(180deg, #1e162c 0%, #150f1f 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(150, 16, 217, 0.18), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .medicos-card:hover::before {
+      opacity: 1;
+    }
+
+    .medicos-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(150, 16, 217, 0.2);
+    }
+
+    .medicos-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(150, 16, 217, 0.22);
+      border: 1px solid rgba(150, 16, 217, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d8b4fe;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(150, 16, 217, 0.25);
+    }
+
+    .medicos-card-title {
+      font-family: var(--font-display);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .medicos-card-desc {
+      font-size: 0.94rem;
+      color: #e2d9f3;
+      line-height: 1.6;
+      margin: 0;
+      flex-grow: 1;
+    }
+
     .subitem-card {
       background: #16111b;
       border: 1px solid rgba(42, 36, 51, 0.8);
@@ -4085,13 +4374,16 @@
                 <a href="#servicios-individuos" class="dropdown-item" data-i18n="navIndividuals">Servicios para individuos</a>
               </li>
               <li>
+                <a href="#servicios-empresas" class="dropdown-item" data-i18n="navEnterprises">Servicios para Empresas</a>
+              </li>
+              <li>
+                <a href="#servicios-educativas" class="dropdown-item" data-i18n="navEdu">Servicios para Instituciones Educativas</a>
+              </li>
+              <li>
+                <a href="#servicios-medicos" class="dropdown-item" data-i18n="navMed">Servicios para Médicos</a>
+              </li>
+              <li>
                 <a href="#conferencias" class="dropdown-item" data-i18n="navKeynotes">Conferencias</a>
-              </li>
-              <li>
-                <a href="#capacitacion-talleres" class="dropdown-item" data-i18n="navWorkshops">Capacitación y Talleres</a>
-              </li>
-              <li>
-                <a href="#duelos-rupturas" class="dropdown-item" data-i18n="navGrief">Duelos y rupturas</a>
               </li>
             </ul>
           </li>
@@ -4158,9 +4450,10 @@
           </button>
           <ul class="mobile-submenu" id="mobile-sublista-servicios">
             <li><a href="#servicios-individuos" class="mobile-sublink mobile-link" data-i18n="navIndividuals">• Servicios para individuos</a></li>
+            <li><a href="#servicios-empresas" class="mobile-sublink mobile-link" data-i18n="navEnterprises">• Servicios para Empresas</a></li>
+            <li><a href="#servicios-educativas" class="mobile-sublink mobile-link" data-i18n="navEdu">• Servicios para Instituciones Educativas</a></li>
+            <li><a href="#servicios-medicos" class="mobile-sublink mobile-link" data-i18n="navMed">• Servicios para Médicos</a></li>
             <li><a href="#conferencias" class="mobile-sublink mobile-link" data-i18n="navKeynotes">• Conferencias</a></li>
-            <li><a href="#capacitacion-talleres" class="mobile-sublink mobile-link" data-i18n="navWorkshops">• Capacitación y Talleres</a></li>
-            <li><a href="#duelos-rupturas" class="mobile-sublink mobile-link" data-i18n="navGrief">• Duelos y rupturas</a></li>
           </ul>
         </li>
 
@@ -4375,8 +4668,23 @@
 
           </div>
 
+          <!-- Video YouTube: Duelos y Rupturas / Acompañamiento -->
+          <div class="hero-video-box reveal-scale reveal-delay-150" style="margin: 24px auto 20px; max-width: 840px; width: 100%;">
+            <div class="video-container">
+              <iframe 
+                id="iframe-youtube-duelos"
+                class="video-iframe" 
+                src="https://www.youtube-nocookie.com/embed/uQ-xa9FsoEc?rel=0&modestbranding=1" 
+                title="Acompañamiento en Duelos y Rupturas - Jaime Vargas" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
           <!-- Botón de Acción -->
-          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center;">
+          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 20px; display: flex; justify-content: center;">
             <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Servicios para individuos')" data-i18n="servIndBtn">Agendar Consulta Individual</a>
           </div>
         </div>
@@ -4474,14 +4782,14 @@
         </div>
 
         <!-- ====================================================================
-             SUBSECCIÓN DETALLADA: CAPACITACIÓN Y TALLERES
+             SUBSECCIÓN DETALLADA: SERVICIOS PARA EMPRESAS
              ==================================================================== -->
-        <div class="subseccion-servicio" id="capacitacion-talleres">
-          <!-- Banner de Cabecera: Capacitación y Talleres -->
+        <div class="subseccion-servicio" id="servicios-empresas">
+          <!-- Banner de Cabecera: Servicios para Empresas -->
           <div class="subseccion-banner reveal-on-scroll reveal-delay-100">
             <img 
-              src="/src/assets/images/slide_taller_ejecutivo_1787346432338.jpg" 
-              alt="Capacitación y Talleres Prácticos" 
+              src="/src/assets/images/b2b_organizacional_1787864493847.jpg" 
+              alt="Servicios para Empresas - Psicología Organizacional y Desarrollo Ejecutivo" 
               class="subseccion-banner-img"
               loading="lazy"
               referrerpolicy="no-referrer"
@@ -4490,24 +4798,148 @@
           </div>
 
           <div class="subseccion-header reveal-on-scroll">
-            <h3 data-i18n="servTallTitle">Capacitación y Talleres Prácticos</h3>
-            <p data-i18n="servTallDesc">
-              Entrenamientos interactivos y programas modulares orientados a desarrollar habilidades críticas en comunicación interpersonal, empatía, bienestar organizacional, psicología educativa y preparación para evaluaciones de alto desempeño.
+            <h3 data-i18n="servEmpTitle">Servicios para Empresas</h3>
+            <p data-i18n="servEmpDesc">
+              Soluciones integrales de Psicología Organizacional y bienestar laboral diseñadas para promover la salud mental en el trabajo, mitigar el riesgo psicosocial y potenciar el rendimiento y compromiso del talento humano.
             </p>
           </div>
 
+          <!-- Grilla de Pilares para Empresas -->
+          <div class="empresas-items-grid reveal-on-scroll reveal-delay-150">
+            
+            <!-- Pilar 1: Capacitación y Talleres Empresariales -->
+            <div class="empresas-card">
+              <div class="empresas-card-header">
+                <div class="empresas-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <h4 class="empresas-card-title" data-i18n="empCard1Title">Capacitación y Talleres Empresariales</h4>
+              </div>
+              <p class="empresas-card-text" data-i18n="empCard1P1">
+                Soluciones integrales de Psicología Organizacional diseñadas para promover la salud mental en el trabajo, mitigar el riesgo psicosocial y potenciar el rendimiento y compromiso del talento humano. Orientadas tanto al sector privado como a entidades públicas, estas intervenciones combinan el diagnóstico técnico con la capacitación de alto impacto.
+              </p>
+              <div class="empresas-card-subheading" data-i18n="empCard1Sub">
+                Las organizaciones buscan cada vez más fortalecer las competencias emocionales de sus equipos de trabajo. Por ello se ofrecen capacitaciones y talleres en temas como:
+              </div>
+              <ul class="empresas-features-list">
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard1Item1">Manejo del estrés laboral.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard1Item2">Prevención del síndrome de burnout.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard1Item3">Inteligencia emocional.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard1Item4">Trabajo en equipo.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard1Item5">Comunicación asertiva.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard1Item6">Liderazgo efectivo.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard1Item7">Resolución de conflictos.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard1Item8">Bienestar y salud mental en el trabajo.</span>
+                </li>
+              </ul>
+              <div class="empresas-card-note" data-i18n="empCard1Note">
+                *Estas actividades pueden desarrollarse de manera presencial o virtual, según las necesidades de la organización.
+              </div>
+            </div>
 
+            <!-- Pilar 2: Coaching y Desarrollo de Líderes -->
+            <div class="empresas-card">
+              <div class="empresas-card-header">
+                <div class="empresas-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <h4 class="empresas-card-title" data-i18n="empCard2Title">Coaching y Desarrollo de Líderes</h4>
+              </div>
+              <p class="empresas-card-text" data-i18n="empCard2P1">
+                Dirigido a coordinadores, jefes, supervisores, gerentes y directivos que buscan fortalecer sus habilidades de liderazgo.
+              </p>
+              <div class="empresas-card-subheading" data-i18n="empCard2Sub">
+                Se trabajan competencias como:
+              </div>
+              <ul class="empresas-features-list">
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard2Item1">Liderazgo efectivo.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard2Item2">Comunicación estratégica.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard2Item3">Manejo de equipos.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard2Item4">Gestión del cambio.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard2Item5">Toma de decisiones.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard2Item6">Inteligencia emocional.</span>
+                </li>
+                <li class="empresas-feature-item">
+                  <span class="empresas-feature-bullet"></span>
+                  <span data-i18n="empCard2Item7">Resolución de conflictos.</span>
+                </li>
+              </ul>
+              <div class="empresas-card-note" data-i18n="empCard2Note">
+                *Programas estructurados de alta exigencia adaptados al perfil ejecutivo y objetivos de la organización.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+            <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Servicios para Empresas')" data-i18n="servEmpBtn">Cotizar Solución Empresarial</a>
+            <a href="https://wa.me/?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20sobre%20Servicios%20para%20Empresas%20y%20Talleres%20Organizacionales." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
+              </svg>
+              Consultar por WhatsApp
+            </a>
+          </div>
         </div>
 
         <!-- ====================================================================
-             SUBSECCIÓN DETALLADA: DUELOS Y RUPTURAS
+             SUBSECCIÓN DETALLADA: SERVICIOS PARA INSTITUCIONES EDUCATIVAS
              ==================================================================== -->
-        <div class="subseccion-servicio" id="duelos-rupturas">
-          <!-- Banner de Cabecera: Duelos y Rupturas -->
+        <div class="subseccion-servicio" id="servicios-educativas">
+          <!-- Banner de Cabecera: Servicios para Instituciones Educativas -->
           <div class="subseccion-banner reveal-on-scroll reveal-delay-100">
             <img 
-              src="/src/assets/images/banner_duelo_terapia_1787413778480.jpg" 
-              alt="Acompañamiento en Duelos y Rupturas" 
+              src="/src/assets/images/b2c_educativa_1787864508677.jpg" 
+              alt="Servicios para Instituciones Educativas - Prevención, Orientación y Salud Mental" 
               class="subseccion-banner-img"
               loading="lazy"
               referrerpolicy="no-referrer"
@@ -4516,29 +4948,177 @@
           </div>
 
           <div class="subseccion-header reveal-on-scroll">
-            <h3 data-i18n="servDuelTitle">Acompañamiento en Duelos y Rupturas</h3>
-            <p data-i18n="servDuelDesc">
-              Un espacio de contención clínica riguroso y humano, diseñado para transitar el impacto de la pérdida y procesar el dolor desde una perspectiva integradora. A través de un abordaje conductual-humanista, este proceso ofrece las herramientas necesarias para comprender la complejidad de la separación, aliviar la carga emocional y reestructurar el bienestar integral.
+            <h3 data-i18n="servEduTitle">Servicios para Instituciones Educativas</h3>
+            <p data-i18n="servEduDesc">
+              Programas integrales de intervención psicoeducativa, prevención de conductas de riesgo y acompañamiento socioemocional diseñados para colegios, institutos y universidades.
             </p>
           </div>
 
-          <!-- Video YouTube: Duelos y Rupturas -->
-          <div class="hero-video-box reveal-scale reveal-delay-150" style="margin: 24px auto 28px; max-width: 840px; width: 100%;">
-            <div class="video-container">
-              <iframe 
-                id="iframe-youtube-duelos"
-                class="video-iframe" 
-                src="https://www.youtube-nocookie.com/embed/uQ-xa9FsoEc?rel=0&modestbranding=1" 
-                title="Acompañamiento en Duelos y Rupturas - Jaime Vargas" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
+          <!-- Grilla de Tarjetas Educativas -->
+          <div class="educativas-items-grid reveal-on-scroll reveal-delay-150">
+            
+            <!-- Tarjeta 1: Prevención en Sustancias Psicotrópicas -->
+            <div class="educativas-card">
+              <div class="educativas-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h4 class="educativas-card-title" data-i18n="eduCard1Title">Jornadas de prevención en el uso de sustancias psicotrópicas</h4>
+              <p class="educativas-card-desc" data-i18n="eduCard1Desc">
+                Concientización, identificación de factores de riesgo y protección, autocuidado y toma de decisiones responsables ante el consumo de sustancias en entornos escolares y juveniles.
+              </p>
             </div>
+
+            <!-- Tarjeta 2: Orientación Vocacional -->
+            <div class="educativas-card">
+              <div class="educativas-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <h4 class="educativas-card-title" data-i18n="eduCard2Title">Jornadas de orientación vocacional</h4>
+              <p class="educativas-card-desc" data-i18n="eduCard2Desc">
+                Evaluación y exploración de aptitudes, descubrimiento de intereses vocacionales, construcción del proyecto de vida y orientación estratégica para una elección de carrera consciente y alineada al potencial individual.
+              </p>
+            </div>
+
+            <!-- Tarjeta 3: Prevención del Suicidio -->
+            <div class="educativas-card">
+              <div class="educativas-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                </svg>
+              </div>
+              <h4 class="educativas-card-title" data-i18n="eduCard3Title">Talleres para la prevención del suicidio</h4>
+              <p class="educativas-card-desc" data-i18n="eduCard3Desc">
+                Detección temprana de señales de alerta, primeros auxilios psicológicos, desestigmatización de la salud mental y fortalecimiento de protocolos y redes de contención emocional en la comunidad educativa.
+              </p>
+            </div>
+
+            <!-- Tarjeta 4: Prevención de Trastornos en Adolescentes -->
+            <div class="educativas-card">
+              <div class="educativas-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h4 class="educativas-card-title" data-i18n="eduCard4Title">Jornadas para la prevención de trastornos en adolescentes</h4>
+              <p class="educativas-card-desc" data-i18n="eduCard4Desc">
+                Abordaje preventivo y psicoeducación en dismorfia corporal, disforia de género, trastornos de la conducta alimentaria (anorexia, bulimia, etc.), fortalecimiento de la autoimagen y regulación socioemocional.
+              </p>
+            </div>
+
           </div>
 
-          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center;">
-            <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Duelos y rupturas')" data-i18n="servDuelBtn">Agendar Acompañamiento</a>
+          <!-- Botones de Acción -->
+          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+            <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Servicios para Instituciones Educativas')" data-i18n="servEduBtn">Cotizar Programa Educativo</a>
+            <a href="https://wa.me/?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20sobre%20Servicios%20para%20Instituciones%20Educativas." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
+              </svg>
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             SUBSECCIÓN DETALLADA: SERVICIOS PARA MÉDICOS (PRUEBAS APTITUDINALES)
+             ==================================================================== -->
+        <div class="subseccion-servicio" id="servicios-medicos">
+          <!-- Banner de Cabecera: Servicios para Médicos -->
+          <div class="subseccion-banner reveal-on-scroll reveal-delay-100">
+            <img 
+              src="/src/assets/images/mmi_aptitudinal_1787864521505.jpg" 
+              alt="Servicios para Médicos - Aplicación de Pruebas Aptitudinales y MMI" 
+              class="subseccion-banner-img"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="subseccion-banner-overlay"></div>
+          </div>
+
+          <div class="subseccion-header reveal-on-scroll">
+            <h3 data-i18n="servMedTitle">Servicios para Médicos</h3>
+            <div style="font-size: 1.15rem; font-weight: 700; color: #d8b4fe; margin-top: 6px; margin-bottom: 10px;" data-i18n="servMedMainHeading">
+              Aplicación de Pruebas Aptitudinales
+            </div>
+            <p data-i18n="servMedDesc">
+              Entrenamiento especializado en Mini Entrevistas Múltiples (MMI) y evaluación de aptitudes (orientado a aspirantes a residencias médicas y posgrados).
+            </p>
+          </div>
+
+          <!-- Grilla de Tarjetas para Médicos -->
+          <div class="medicos-items-grid reveal-on-scroll reveal-delay-150">
+            
+            <!-- Pilar 1: MMI -->
+            <div class="medicos-card">
+              <div class="medicos-card-header">
+                <div class="medicos-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <h4 class="medicos-card-title" data-i18n="medCard1Title">Simulación de Mini Entrevistas Múltiples (MMI)</h4>
+              </div>
+              <p class="medicos-card-desc" data-i18n="medCard1Desc">
+                Preparación práctica en la resolución de escenarios éticos, toma de decisiones en tiempo real, comunicación bajo presión y demostración de empatía ejecutiva frente a evaluadores.
+              </p>
+            </div>
+
+            <!-- Pilar 2: Evaluación y Perfilamiento Aptitudinal -->
+            <div class="medicos-card">
+              <div class="medicos-card-header">
+                <div class="medicos-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <h4 class="medicos-card-title" data-i18n="medCard2Title">Evaluación y Perfilamiento Aptitudinal</h4>
+              </div>
+              <p class="medicos-card-desc" data-i18n="medCard2Desc">
+                Valoración e interpretación de pruebas psicológicas, competencias socioemocionales y pensamiento crítico.
+              </p>
+            </div>
+
+            <!-- Pilar 3: Desempeño bajo Alta Presión -->
+            <div class="medicos-card">
+              <div class="medicos-card-header">
+                <div class="medicos-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <h4 class="medicos-card-title" data-i18n="medCard3Title">Desempeño bajo Alta Presión</h4>
+              </div>
+              <p class="medicos-card-desc" data-i18n="medCard3Desc">
+                Control de sesgos, regulación del estrés, proyección de seguridad profesional y estructuración de argumentos persuasivos y éticos durante las entrevistas y evaluaciones de admisión.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+            <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Servicios para Médicos')" data-i18n="servMedBtn">Agendar Entrenamiento MMI / Pruebas</a>
+            <a href="https://wa.me/?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20preparaci%C3%B3n%20para%20Mini%20Entrevistas%20M%C3%BAltiples%20(MMI)%20y%20Pruebas%20Aptitudinales%20para%20M%C3%A9dicos." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
+              </svg>
+              Consultar por WhatsApp
+            </a>
           </div>
         </div>
 
@@ -4778,10 +5358,10 @@
                   <label for="campo-servicio" data-i18n="lblService">Servicio de Interés *</label>
                   <select id="campo-servicio" name="service" class="form-control" required>
                     <option value="Servicios para individuos" data-i18n="optIndividuals">Servicios para individuos</option>
+                    <option value="Servicios para Empresas" data-i18n="optEnterprises">Servicios para Empresas</option>
+                    <option value="Servicios para Instituciones Educativas" data-i18n="optEdu">Servicios para Instituciones Educativas</option>
+                    <option value="Servicios para Médicos" data-i18n="optMed">Servicios para Médicos (Pruebas Aptitudinales / MMI)</option>
                     <option value="Conferencias" data-i18n="optKeynotes">Conferencias</option>
-                    <option value="Capacitación y Talleres" data-i18n="optWorkshops">Capacitación y Talleres</option>
-                    <option value="Asesoría Psicológica" data-i18n="optCounseling">Asesoría Psicológica</option>
-                    <option value="Duelos y rupturas" data-i18n="optGrief">Duelos y rupturas</option>
                     <option value="Consulta sobre Publicaciones / Editorial" data-i18n="optBooks">Consulta sobre Publicaciones / Editorial</option>
                     <option value="Podcast / Invitación o Colaboración" data-i18n="optPodcast">Podcast / Invitación o Colaboración</option>
                     <option value="Consulta General" data-i18n="optGeneral">Consulta General / Otro</option>
@@ -4870,9 +5450,10 @@
           <h4 class="footer-nav-title" data-i18n="footerServicesMediaTitle">Servicios & Medios</h4>
           <ul class="footer-links">
             <li><a href="#servicios-individuos" data-i18n="navIndividuals">Servicios para individuos</a></li>
+            <li><a href="#servicios-empresas" data-i18n="navEnterprises">Servicios para Empresas</a></li>
+            <li><a href="#servicios-educativas" data-i18n="navEdu">Servicios para Instituciones Educativas</a></li>
+            <li><a href="#servicios-medicos" data-i18n="navMed">Servicios para Médicos</a></li>
             <li><a href="#conferencias" data-i18n="navKeynotes">Conferencias</a></li>
-            <li><a href="#capacitacion-talleres" data-i18n="navWorkshops">Capacitación y Talleres</a></li>
-            <li><a href="#duelos-rupturas" data-i18n="navGrief">Duelos y rupturas</a></li>
             <li><a href="#libros" data-i18n="footerBooksLink">Publicaciones & Ensayos</a></li>
             <li><a href="#podcast" data-i18n="footerPodcastLink">Episodios de Podcast</a></li>
           </ul>
@@ -4983,6 +5564,60 @@
         indCard3Item1: "Lenguaje verbal y no verbal",
         indCard3Item2: "Expresión corporal",
         indCard3Item3: "Técnicas de comunicación asertiva",
+        navEnterprises: "Servicios para Empresas",
+        optEnterprises: "Servicios para Empresas",
+        servEmpTitle: "Servicios para Empresas",
+        servEmpTag: "Psicología Organizacional & Bienestar Corporativo",
+        servEmpDesc: "Soluciones integrales de Psicología Organizacional y bienestar laboral diseñadas para promover la salud mental en el trabajo, mitigar el riesgo psicosocial y potenciar el rendimiento y compromiso del talento humano.",
+        servEmpBtn: "Cotizar Solución Empresarial",
+        empCard1Title: "Capacitación y Talleres Empresariales",
+        empCard1P1: "Soluciones integrales de Psicología Organizacional diseñadas para promover la salud mental en el trabajo, mitigar el riesgo psicosocial y potenciar el rendimiento y compromiso del talento humano. Orientadas tanto al sector privado como a entidades públicas, estas intervenciones combinan el diagnóstico técnico con la capacitación de alto impacto.",
+        empCard1Sub: "Las organizaciones buscan cada vez más fortalecer las competencias emocionales de sus equipos de trabajo. Por ello se ofrecen capacitaciones y talleres en temas como:",
+        empCard1Item1: "Manejo del estrés laboral.",
+        empCard1Item2: "Prevención del síndrome de burnout.",
+        empCard1Item3: "Inteligencia emocional.",
+        empCard1Item4: "Trabajo en equipo.",
+        empCard1Item5: "Comunicación asertiva.",
+        empCard1Item6: "Liderazgo efectivo.",
+        empCard1Item7: "Resolución de conflictos.",
+        empCard1Item8: "Bienestar y salud mental en el trabajo.",
+        empCard1Note: "*Estas actividades pueden desarrollarse de manera presencial o virtual, según las necesidades de la organización.",
+        empCard2Title: "Coaching y Desarrollo de Líderes",
+        empCard2P1: "Dirigido a coordinadores, jefes, supervisores, gerentes y directivos que buscan fortalecer sus habilidades de liderazgo.",
+        empCard2Sub: "Se trabajan competencias como:",
+        empCard2Item1: "Liderazgo efectivo.",
+        empCard2Item2: "Comunicación estratégica.",
+        empCard2Item3: "Manejo de equipos.",
+        empCard2Item4: "Gestión del cambio.",
+        empCard2Item5: "Toma de decisiones.",
+        empCard2Item6: "Inteligencia emocional.",
+        empCard2Item7: "Resolución de conflictos.",
+        empCard2Note: "*Programas estructurados de alta exigencia adaptados al perfil ejecutivo y objetivos de la organización.",
+        navEdu: "Servicios para Instituciones Educativas",
+        optEdu: "Servicios para Instituciones Educativas",
+        servEduTitle: "Servicios para Instituciones Educativas",
+        servEduDesc: "Programas integrales de intervención psicoeducativa, prevención de conductas de riesgo y acompañamiento socioemocional diseñados para colegios, institutos y universidades.",
+        servEduBtn: "Cotizar Programa Educativo",
+        eduCard1Title: "Jornadas de prevención en el uso de sustancias psicotrópicas",
+        eduCard1Desc: "Concientización, identificación de factores de riesgo y protección, autocuidado y toma de decisiones responsables ante el consumo de sustancias en entornos escolares y juveniles.",
+        eduCard2Title: "Jornadas de orientación vocacional",
+        eduCard2Desc: "Evaluación y exploración de aptitudes, descubrimiento de intereses vocacionales, construcción del proyecto de vida y orientación estratégica para una elección de carrera consciente y alineada al potencial individual.",
+        eduCard3Title: "Talleres para la prevención del suicidio",
+        eduCard3Desc: "Detección temprana de señales de alerta, primeros auxilios psicológicos, desestigmatización de la salud mental y fortalecimiento de protocolos y redes de contención emocional en la comunidad educativa.",
+        eduCard4Title: "Jornadas para la prevención de trastornos en adolescentes",
+        eduCard4Desc: "Abordaje preventivo y psicoeducación en dismorfia corporal, disforia de género, trastornos de la conducta alimentaria (anorexia, bulimia, etc.), fortalecimiento de la autoimagen y regulación socioemocional.",
+        navMed: "Servicios para Médicos",
+        optMed: "Servicios para Médicos (Pruebas Aptitudinales / MMI)",
+        servMedTitle: "Servicios para Médicos",
+        servMedMainHeading: "Aplicación de Pruebas Aptitudinales",
+        servMedDesc: "Entrenamiento especializado en Mini Entrevistas Múltiples (MMI) y evaluación de aptitudes (orientado a aspirantes a residencias médicas y posgrados).",
+        servMedBtn: "Agendar Entrenamiento MMI / Pruebas",
+        medCard1Title: "Simulación de Mini Entrevistas Múltiples (MMI)",
+        medCard1Desc: "Preparación práctica en la resolución de escenarios éticos, toma de decisiones en tiempo real, comunicación bajo presión y demostración de empatía ejecutiva frente a evaluadores.",
+        medCard2Title: "Evaluación y Perfilamiento Aptitudinal",
+        medCard2Desc: "Valoración e interpretación de pruebas psicológicas, competencias socioemocionales y pensamiento crítico.",
+        medCard3Title: "Desempeño bajo Alta Presión",
+        medCard3Desc: "Control de sesgos, regulación del estrés, proyección de seguridad profesional y estructuración de argumentos persuasivos y éticos durante las entrevistas y evaluaciones de admisión.",
         servConfTitle: "Conferencias Magistrales: Ponencias que Transforman",
         servConfTag: "Conferencias Magistrales",
         servConfDesc: "Diseñadas como experiencias únicas de aprendizaje, estas conferencias van más allá de la exposición académica tradicional para convertirse en verdaderos catalizadores de cambio. A través de un enfoque dinámico y riguroso que entrelaza la psicología, la comunicación efectiva y las humanidades, cada ponencia está estructurada para conmover, cuestionar y redefinir la perspectiva de la audiencia.",
@@ -5146,6 +5781,60 @@
         indCard3Item1: "Verbal and non-verbal language",
         indCard3Item2: "Body language and corporal expression",
         indCard3Item3: "Assertive communication techniques",
+        navEnterprises: "Corporate & Enterprise Services",
+        optEnterprises: "Corporate & Enterprise Services",
+        servEmpTitle: "Corporate & Enterprise Services",
+        servEmpTag: "Organizational Psychology & Workplace Wellbeing",
+        servEmpDesc: "Comprehensive Organizational Psychology and workplace wellbeing solutions designed to foster mental health at work, mitigate psychosocial risks, and elevate team commitment and high-impact performance.",
+        servEmpBtn: "Request Corporate Proposal",
+        empCard1Title: "Corporate Training & Interactive Workshops",
+        empCard1P1: "Comprehensive Organizational Psychology solutions crafted to promote mental health in the workplace, mitigate psychosocial risk, and enhance talent performance and commitment. Tailored for both private corporations and public institutions, these interventions combine technical diagnosis with high-impact training.",
+        empCard1Sub: "Organizations increasingly seek to strengthen the emotional and communicative competencies of their teams. Training and workshops are offered in areas such as:",
+        empCard1Item1: "Workplace stress management.",
+        empCard1Item2: "Burnout syndrome prevention.",
+        empCard1Item3: "Emotional intelligence.",
+        empCard1Item4: "High-performance teamwork.",
+        empCard1Item5: "Assertive communication.",
+        empCard1Item6: "Effective leadership.",
+        empCard1Item7: "Conflict resolution.",
+        empCard1Item8: "Workplace mental health and wellbeing.",
+        empCard1Note: "*These programs can be delivered in-person or virtually, according to organizational requirements.",
+        empCard2Title: "Executive Coaching & Leadership Development",
+        empCard2P1: "Designed for coordinators, managers, supervisors, team leads, and senior executives seeking to elevate their leadership capabilities.",
+        empCard2Sub: "Core competencies developed include:",
+        empCard2Item1: "Effective leadership.",
+        empCard2Item2: "Strategic communication.",
+        empCard2Item3: "Team management.",
+        empCard2Item4: "Change management.",
+        empCard2Item5: "Decisive decision-making.",
+        empCard2Item6: "Emotional intelligence.",
+        empCard2Item7: "Constructive conflict resolution.",
+        empCard2Note: "*Structured, high-standard programs tailored to executive profiles and strategic organizational objectives.",
+        navEdu: "Services for Educational Institutions",
+        optEdu: "Services for Educational Institutions",
+        servEduTitle: "Services for Educational Institutions",
+        servEduDesc: "Comprehensive psychoeducational intervention programs, risk behavior prevention, and socio-emotional guidance designed for schools, institutes, and universities.",
+        servEduBtn: "Request Educational Program Proposal",
+        eduCard1Title: "Prevention Workshops on Psychotropic Substance Use",
+        eduCard1Desc: "Awareness, identification of risk and protective factors, self-care, and responsible decision-making regarding substance use in school and youth environments.",
+        eduCard2Title: "Vocational Guidance & Career Pathways Workshops",
+        eduCard2Desc: "Assessment and exploration of aptitudes, discovery of vocational interests, life project building, and strategic guidance for a conscious career choice aligned with individual potential.",
+        eduCard3Title: "Suicide Prevention Workshops",
+        eduCard3Desc: "Early detection of warning signs, psychological first aid, destigmatization of mental health, and strengthening protocols and emotional containment networks across the educational community.",
+        eduCard4Title: "Adolescent Disorders Prevention Workshops",
+        eduCard4Desc: "Preventive approaches and psychoeducation in body dysmorphia, gender dysphoria, eating disorders (anorexia, bulimia, etc.), self-image strengthening, and socio-emotional regulation.",
+        navMed: "Services for Medical Professionals",
+        optMed: "Services for Medical Professionals (Aptitude Tests / MMI)",
+        servMedTitle: "Services for Medical Professionals",
+        servMedMainHeading: "Aptitude Testing & Assessment",
+        servMedDesc: "Specialized training in Multiple Mini Interviews (MMI) and aptitude evaluation (designed for medical residency and postgraduate applicants).",
+        servMedBtn: "Schedule MMI / Aptitude Training",
+        medCard1Title: "Multiple Mini Interview (MMI) Simulation",
+        medCard1Desc: "Hands-on preparation in resolving ethical dilemmas, real-time decision making, high-pressure communication, and executive empathy demonstration before evaluators.",
+        medCard2Title: "Aptitude Assessment & Profiling",
+        medCard2Desc: "Assessment and interpretation of psychological tests, socio-emotional competencies, and critical thinking.",
+        medCard3Title: "High-Pressure Performance Mastery",
+        medCard3Desc: "Bias control, stress regulation, projection of professional confidence, and structured persuasive, ethical arguments during admission interviews and evaluations.",
         servConfTitle: "Keynote Addresses: Speeches That Transform",
         servConfTag: "Keynote Speeches",
         servConfDesc: "Crafted as immersive learning experiences, these keynote speeches transcend traditional academic lectures to become true catalysts for change. Through a dynamic and rigorous approach that bridges psychology, strategic communication, and the humanities, each presentation is structured to inspire, challenge assumptions, and broaden audience perspectives.",
