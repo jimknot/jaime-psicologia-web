@@ -1728,6 +1728,111 @@
       gap: 20px;
     }
 
+    /* Grilla Moderna para Módulo de Servicios para Individuos */
+    .individuos-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0 16px;
+    }
+
+    .individuos-card {
+      background: linear-gradient(180deg, #181222 0%, #120d1a 100%);
+      border: 1px solid rgba(150, 16, 217, 0.32);
+      border-radius: 14px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: var(--transicion-suave);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .individuos-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #9610d9, #c4b5fd);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .individuos-card:hover {
+      border-color: rgba(150, 16, 217, 0.65);
+      background: linear-gradient(180deg, #1e162c 0%, #150f1f 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(150, 16, 217, 0.18), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .individuos-card:hover::before {
+      opacity: 1;
+    }
+
+    .individuos-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(150, 16, 217, 0.2);
+    }
+
+    .individuos-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(150, 16, 217, 0.22);
+      border: 1px solid rgba(150, 16, 217, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d8b4fe;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(150, 16, 217, 0.25);
+    }
+
+    .individuos-card-title {
+      font-family: var(--font-display);
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .individuos-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-grow: 1;
+    }
+
+    .individuos-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #ffffff !important;
+      line-height: 1.5;
+    }
+
+    .individuos-feature-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c084fc;
+      box-shadow: 0 0 8px #9610d9;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
     .subitem-card {
       background: #16111b;
       border: 1px solid rgba(42, 36, 51, 0.8);
@@ -3977,13 +4082,13 @@
             </a>
             <ul class="dropdown-menu" aria-label="Submenú de Servicios">
               <li>
+                <a href="#servicios-individuos" class="dropdown-item" data-i18n="navIndividuals">Servicios para individuos</a>
+              </li>
+              <li>
                 <a href="#conferencias" class="dropdown-item" data-i18n="navKeynotes">Conferencias</a>
               </li>
               <li>
                 <a href="#capacitacion-talleres" class="dropdown-item" data-i18n="navWorkshops">Capacitación y Talleres</a>
-              </li>
-              <li>
-                <a href="#asesoria-psicologica" class="dropdown-item" data-i18n="navCounseling">Asesoría Psicológica</a>
               </li>
               <li>
                 <a href="#duelos-rupturas" class="dropdown-item" data-i18n="navGrief">Duelos y rupturas</a>
@@ -4052,9 +4157,9 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <ul class="mobile-submenu" id="mobile-sublista-servicios">
+            <li><a href="#servicios-individuos" class="mobile-sublink mobile-link" data-i18n="navIndividuals">• Servicios para individuos</a></li>
             <li><a href="#conferencias" class="mobile-sublink mobile-link" data-i18n="navKeynotes">• Conferencias</a></li>
             <li><a href="#capacitacion-talleres" class="mobile-sublink mobile-link" data-i18n="navWorkshops">• Capacitación y Talleres</a></li>
-            <li><a href="#asesoria-psicologica" class="mobile-sublink mobile-link" data-i18n="navCounseling">• Asesoría Psicológica</a></li>
             <li><a href="#duelos-rupturas" class="mobile-sublink mobile-link" data-i18n="navGrief">• Duelos y rupturas</a></li>
           </ul>
         </li>
@@ -4153,6 +4258,127 @@
         <!-- Encabezado de la Sección Servicios -->
         <div class="section-header-dark reveal-on-scroll">
           <h2 data-i18n="servicesMainTitle">Servicios Profesionales</h2>
+        </div>
+
+        <!-- ====================================================================
+             SUBSECCIÓN DETALLADA: SERVICIOS PARA INDIVIDUOS
+             ==================================================================== -->
+        <div class="subseccion-servicio" id="servicios-individuos" style="border-top: none; padding-top: 20px;">
+          <!-- Banner de Cabecera: Servicios para Individuos -->
+          <div class="subseccion-banner reveal-on-scroll reveal-delay-100">
+            <img 
+              src="/src/assets/images/servicios_individuos_1787864830999.jpg" 
+              alt="Servicios para individuos - Acompañamiento Psicológico y Desarrollo Humano" 
+              class="subseccion-banner-img"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="subseccion-banner-overlay"></div>
+          </div>
+
+          <div class="subseccion-header reveal-on-scroll">
+            <h3 data-i18n="servIndTitle">Servicios para Individuos</h3>
+            <p data-i18n="servIndDesc">
+              Un enfoque clínico y formativo de vanguardia orientado al crecimiento personal, la autorregulación emocional y el desarrollo de habilidades comunicativas de alto impacto. A través de metodologías basadas en la evidencia, la psicología conductual y el humanismo reflexivo, brindamos herramientas sólidas para afrontar momentos decisivos, superar pérdidas y potenciar el bienestar integral en cada etapa de la vida.
+            </p>
+          </div>
+
+          <!-- Grilla Moderna de Pilares de Atención Individual -->
+          <div class="individuos-items-grid reveal-on-scroll reveal-delay-150">
+            
+            <!-- Pilar 1: Asesoría Psicológica personalizada -->
+            <div class="individuos-card">
+              <div class="individuos-card-header">
+                <div class="individuos-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <h4 class="individuos-card-title" data-i18n="indCard1Title">Asesoría Psicológica personalizada</h4>
+              </div>
+              <ul class="individuos-features-list">
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard1Item1">Gestión de ansiedad y estrés</span>
+                </li>
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard1Item2">Fortalecimiento del autoestima</span>
+                </li>
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard1Item3">Mejora en las relaciones interpersonales</span>
+                </li>
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard1Item4">Psicoeducación y autoconocimiento</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Pilar 2: Apoyo en procesos de duelos y pérdidas -->
+            <div class="individuos-card">
+              <div class="individuos-card-header">
+                <div class="individuos-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                  </svg>
+                </div>
+                <h4 class="individuos-card-title" data-i18n="indCard2Title">Apoyo en procesos de duelos y pérdidas</h4>
+              </div>
+              <ul class="individuos-features-list">
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard2Item1">Acompañamiento especializado</span>
+                </li>
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard2Item2">Enfoque conductual-humanista</span>
+                </li>
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard2Item3">Técnicas de afrontamiento y contención</span>
+                </li>
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard2Item4">Apoyo al núcleo familiar</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Pilar 3: Comunicación y habilidades sociales -->
+            <div class="individuos-card">
+              <div class="individuos-card-header">
+                <div class="individuos-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+                <h4 class="individuos-card-title" data-i18n="indCard3Title">Comunicación y habilidades sociales</h4>
+              </div>
+              <ul class="individuos-features-list">
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard3Item1">Lenguaje verbal y no verbal</span>
+                </li>
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard3Item2">Expresión corporal</span>
+                </li>
+                <li class="individuos-feature-item">
+                  <span class="individuos-feature-bullet"></span>
+                  <span data-i18n="indCard3Item3">Técnicas de comunicación asertiva</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Botón de Acción -->
+          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center;">
+            <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Servicios para individuos')" data-i18n="servIndBtn">Agendar Consulta Individual</a>
+          </div>
         </div>
 
         <!-- ====================================================================
@@ -4270,138 +4496,7 @@
             </p>
           </div>
 
-          <!-- Resumen de Líneas de Portafolio en Capacitación -->
-          <div class="talleres-preview-card reveal-on-scroll reveal-delay-150">
-            <div style="text-align: center; margin-bottom: 12px;">
-              <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: #d8b4fe; font-weight: 600;">Estructura del Portafolio de Capacitación</span>
-              <h4 style="font-family: var(--font-display); color: var(--texto-claro); font-size: 1.25rem; margin-top: 4px;">Líneas de Negocio & Programas Especializados</h4>
-            </div>
 
-            <div class="talleres-preview-grid">
-              <!-- Caja 1: Servicios para individuos -->
-              <div class="talleres-preview-item">
-                <img 
-                  src="/src/assets/images/servicios_individuos_1787864830999.jpg" 
-                  alt="Servicios para individuos" 
-                  class="talleres-preview-bg" 
-                  loading="lazy" 
-                  referrerpolicy="no-referrer"
-                />
-                <div class="talleres-preview-overlay"></div>
-                <div class="talleres-preview-content">
-                  <div class="talleres-preview-content-body">
-                    <h5 data-i18n="talleresBoxTitle1">👤 Servicios para individuos</h5>
-                    <p data-i18n="talleresBoxDesc1">Acompañamiento individual en autoimagen, superación de bloqueos emocionales, relaciones afectivas y desarrollo de habilidades intrapersonales.</p>
-                  </div>
-                  <a href="charlas.html" class="talleres-preview-btn">
-                    <span data-i18n="talleresBoxBtn1">Ver portafolio</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Caja 2: Servicios para Empresas -->
-              <div class="talleres-preview-item">
-                <img 
-                  src="/src/assets/images/b2b_organizacional_1787864493847.jpg" 
-                  alt="Servicios para Empresas" 
-                  class="talleres-preview-bg" 
-                  loading="lazy" 
-                  referrerpolicy="no-referrer"
-                />
-                <div class="talleres-preview-overlay"></div>
-                <div class="talleres-preview-content">
-                  <div class="talleres-preview-content-body">
-                    <h5 data-i18n="talleresBoxTitle2">🏢 Servicios para Empresas</h5>
-                    <p data-i18n="talleresBoxDesc2">Consultoría estratégica, evaluación de clima laboral, capacitación en habilidades blandas y programas de bienestar corporativo anti-burnout.</p>
-                  </div>
-                  <a href="charlas.html" class="talleres-preview-btn">
-                    <span data-i18n="talleresBoxBtn2">Ver portafolio</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Caja 3: Servicios para instituciones educativas -->
-              <div class="talleres-preview-item">
-                <img 
-                  src="/src/assets/images/b2c_educativa_1787864508677.jpg" 
-                  alt="Servicios para instituciones educativas" 
-                  class="talleres-preview-bg" 
-                  loading="lazy" 
-                  referrerpolicy="no-referrer"
-                />
-                <div class="talleres-preview-overlay"></div>
-                <div class="talleres-preview-content">
-                  <div class="talleres-preview-content-body">
-                    <h5 data-i18n="talleresBoxTitle3">🎓 Servicios para instituciones educativas</h5>
-                    <p data-i18n="talleresBoxDesc3">Regulación de ansiedad académica, preparación de alto rendimiento para exámenes, orientación vocacional y talleres estudiantiles.</p>
-                  </div>
-                  <a href="charlas.html" class="talleres-preview-btn">
-                    <span data-i18n="talleresBoxBtn3">Ver portafolio</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Caja 4: Aplicación de Pruebas Aptitudinales -->
-              <div class="talleres-preview-item">
-                <img 
-                  src="/src/assets/images/mmi_aptitudinal_1787864521505.jpg" 
-                  alt="Aplicación de Pruebas Aptitudinales" 
-                  class="talleres-preview-bg" 
-                  loading="lazy" 
-                  referrerpolicy="no-referrer"
-                />
-                <div class="talleres-preview-overlay"></div>
-                <div class="talleres-preview-content">
-                  <div class="talleres-preview-content-body">
-                    <h5 data-i18n="talleresBoxTitle4">🎯 Aplicación de Pruebas Aptitudinales</h5>
-                    <p data-i18n="talleresBoxDesc4">Entrenamiento especializado en Mini Entrevistas Múltiples (MMI) y evaluación de aptitudes para aspirantes a residencias médicas y postgrados.</p>
-                  </div>
-                  <a href="charlas.html" class="talleres-preview-btn">
-                    <span data-i18n="talleresBoxBtn4">Ver portafolio</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-            <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Capacitación y Talleres')">Cotizar Programa a Medida</a>
-          </div>
-        </div>
-
-        <!-- ====================================================================
-             SUBSECCIÓN DETALLADA: ASESORÍA PSICOLÓGICA
-             ==================================================================== -->
-        <div class="subseccion-servicio" id="asesoria-psicologica">
-          <!-- Banner de Cabecera: Asesoría Psicológica -->
-          <div class="subseccion-banner reveal-on-scroll reveal-delay-100">
-            <img 
-              src="/src/assets/images/slide_consultoria_clinica_1787346420862.jpg" 
-              alt="Asesoría Psicológica & Acompañamiento" 
-              class="subseccion-banner-img"
-              loading="lazy"
-              referrerpolicy="no-referrer"
-            />
-            <div class="subseccion-banner-overlay"></div>
-          </div>
-
-          <div class="subseccion-header reveal-on-scroll">
-            <h3 data-i18n="servAsesTitle">Asesoría Psicológica & Acompañamiento</h3>
-            <p data-i18n="servAsesP1">
-              Un espacio seguro y estrictamente confidencial, concebido para brindar la tranquilidad y la comodidad que cada consultante necesita al iniciar su proceso. Aquí, la privacidad es la base sobre la cual se construye una relación de confianza mutua, libre de juicios y orientada al bienestar integral.
-            </p>
-            <p data-i18n="servAsesP2">
-              Estas sesiones están estructuradas para ir profundo: un trabajo reflexivo y riguroso que permite explorar el origen de las dificultades, procesar los momentos de transición y construir herramientas duraderas. A través de un enfoque personalizado, cada encuentro acompaña al individuo a comprender su historia y proyectar un cambio genuino en su vida.
-            </p>
-          </div>
-
-          <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center;">
-            <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Asesoría Psicológica')" data-i18n="servAsesBtn">Agendar Sesión de Asesoría</a>
-          </div>
         </div>
 
         <!-- ====================================================================
@@ -4682,6 +4777,7 @@
                 <div class="form-group">
                   <label for="campo-servicio" data-i18n="lblService">Servicio de Interés *</label>
                   <select id="campo-servicio" name="service" class="form-control" required>
+                    <option value="Servicios para individuos" data-i18n="optIndividuals">Servicios para individuos</option>
                     <option value="Conferencias" data-i18n="optKeynotes">Conferencias</option>
                     <option value="Capacitación y Talleres" data-i18n="optWorkshops">Capacitación y Talleres</option>
                     <option value="Asesoría Psicológica" data-i18n="optCounseling">Asesoría Psicológica</option>
@@ -4773,9 +4869,9 @@
         <div>
           <h4 class="footer-nav-title" data-i18n="footerServicesMediaTitle">Servicios & Medios</h4>
           <ul class="footer-links">
+            <li><a href="#servicios-individuos" data-i18n="navIndividuals">Servicios para individuos</a></li>
             <li><a href="#conferencias" data-i18n="navKeynotes">Conferencias</a></li>
             <li><a href="#capacitacion-talleres" data-i18n="navWorkshops">Capacitación y Talleres</a></li>
-            <li><a href="#asesoria-psicologica" data-i18n="navCounseling">Asesoría Psicológica</a></li>
             <li><a href="#duelos-rupturas" data-i18n="navGrief">Duelos y rupturas</a></li>
             <li><a href="#libros" data-i18n="footerBooksLink">Publicaciones & Ensayos</a></li>
             <li><a href="#podcast" data-i18n="footerPodcastLink">Episodios de Podcast</a></li>
@@ -4867,6 +4963,26 @@
         slide5Desc: "Potenciación de talentos cognitivos y adaptaciones funcionales para la vida diaria.",
         servicesMainTitle: "Servicios Profesionales",
         servicesMainSubtitle: "Áreas de Práctica & Especialidad",
+        navIndividuals: "Servicios para individuos",
+        optIndividuals: "Servicios para individuos",
+        servIndTitle: "Servicios para Individuos",
+        servIndTag: "Acompañamiento Psicológico & Desarrollo Humano",
+        servIndDesc: "Un enfoque clínico y formativo de vanguardia orientado al crecimiento personal, la autorregulación emocional y el desarrollo de habilidades comunicativas de alto impacto. A través de metodologías basadas en la evidencia, la psicología conductual y el humanismo reflexivo, brindamos herramientas sólidas para afrontar momentos decisivos, superar pérdidas y potenciar el bienestar integral en cada etapa de la vida.",
+        servIndBtn: "Agendar Consulta Individual",
+        indCard1Title: "Asesoría Psicológica personalizada",
+        indCard1Item1: "Gestión de ansiedad y estrés",
+        indCard1Item2: "Fortalecimiento del autoestima",
+        indCard1Item3: "Mejora en las relaciones interpersonales",
+        indCard1Item4: "Psicoeducación y autoconocimiento",
+        indCard2Title: "Apoyo en procesos de duelos y pérdidas",
+        indCard2Item1: "Acompañamiento especializado",
+        indCard2Item2: "Enfoque conductual-humanista",
+        indCard2Item3: "Técnicas de afrontamiento y contención",
+        indCard2Item4: "Apoyo al núcleo familiar",
+        indCard3Title: "Comunicación y habilidades sociales",
+        indCard3Item1: "Lenguaje verbal y no verbal",
+        indCard3Item2: "Expresión corporal",
+        indCard3Item3: "Técnicas de comunicación asertiva",
         servConfTitle: "Conferencias Magistrales: Ponencias que Transforman",
         servConfTag: "Conferencias Magistrales",
         servConfDesc: "Diseñadas como experiencias únicas de aprendizaje, estas conferencias van más allá de la exposición académica tradicional para convertirse en verdaderos catalizadores de cambio. A través de un enfoque dinámico y riguroso que entrelaza la psicología, la comunicación efectiva y las humanidades, cada ponencia está estructurada para conmover, cuestionar y redefinir la perspectiva de la audiencia.",
@@ -5010,6 +5126,26 @@
         slide5Desc: "Empowering cognitive strengths and functional adaptations for executive and daily life.",
         servicesMainTitle: "Professional Services",
         servicesMainSubtitle: "Areas of Practice & Core Expertise",
+        navIndividuals: "Individual Services",
+        optIndividuals: "Individual Services",
+        servIndTitle: "Services for Individuals",
+        servIndTag: "Psychological Support & Human Growth",
+        servIndDesc: "A cutting-edge clinical and developmental approach dedicated to personal growth, emotional self-regulation, and high-impact communication skills. Utilizing evidence-based methodologies, behavioral psychology, and reflective humanism, we provide solid tools to navigate life transitions, overcome grief, and enhance total wellbeing at every stage.",
+        servIndBtn: "Schedule Individual Consultation",
+        indCard1Title: "Personalized Psychological Counseling",
+        indCard1Item1: "Anxiety and stress management",
+        indCard1Item2: "Self-esteem strengthening",
+        indCard1Item3: "Interpersonal relationships improvement",
+        indCard1Item4: "Psychoeducation and self-awareness",
+        indCard2Title: "Grief and Loss Support Processes",
+        indCard2Item1: "Specialized clinical accompaniment",
+        indCard2Item2: "Behavioral-humanistic framework",
+        indCard2Item3: "Coping mechanisms and emotional containment",
+        indCard2Item4: "Support for the family circle",
+        indCard3Title: "Communication & Social Skills",
+        indCard3Item1: "Verbal and non-verbal language",
+        indCard3Item2: "Body language and corporal expression",
+        indCard3Item3: "Assertive communication techniques",
         servConfTitle: "Keynote Addresses: Speeches That Transform",
         servConfTag: "Keynote Speeches",
         servConfDesc: "Crafted as immersive learning experiences, these keynote speeches transcend traditional academic lectures to become true catalysts for change. Through a dynamic and rigorous approach that bridges psychology, strategic communication, and the humanities, each presentation is structured to inspire, challenge assumptions, and broaden audience perspectives.",
