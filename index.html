@@ -11,6 +11,10 @@
   <meta property="og:description" content="Psicología clínica, neurodiversidad en adultos, conferencias de alto impacto, capacitación y asesoría estratégica.">
   <meta property="og:image" content="/src/assets/images/regenerated_image_1787409671183.png">
   
+  <!-- Favicon e Iconos del Sitio -->
+  <link rel="icon" type="image/jpeg" href="/src/assets/images/hat_logo_icon_1787343582062.jpg">
+  <link rel="apple-touch-icon" href="/src/assets/images/hat_logo_icon_1787343582062.jpg">
+  
   <!-- Fuentes Tipográficas Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -4236,10 +4240,10 @@
     /* Botón flotante Volver Arriba (Scroll to Top) */
     .btn-scroll-top {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 48px;
-      height: 48px;
+      bottom: 92px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--morado-profundo) 0%, var(--morado-neon) 100%);
       color: #ffffff;
@@ -4257,8 +4261,74 @@
                   transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                   box-shadow 0.3s ease,
                   background 0.3s ease;
-      z-index: 999;
+      z-index: 998;
       outline: none;
+    }
+
+    /* Botón Flotante de WhatsApp */
+    .btn-whatsapp-flotante {
+      position: fixed;
+      bottom: 26px;
+      right: 24px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background-color: var(--whatsapp);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.42), 0 2px 6px rgba(0, 0, 0, 0.25);
+      z-index: 999;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-whatsapp-flotante:hover {
+      background-color: var(--whatsapp-hover);
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55), 0 4px 10px rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+    }
+
+    .btn-whatsapp-flotante:active {
+      transform: scale(0.96);
+    }
+
+    .btn-whatsapp-flotante svg {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.25s ease;
+    }
+
+    .btn-whatsapp-flotante:hover svg {
+      transform: rotate(6deg) scale(1.05);
+    }
+
+    .btn-whatsapp-flotante-tooltip {
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%) translateX(8px);
+      background-color: #0b0712;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-whatsapp-flotante:hover .btn-whatsapp-flotante-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0);
     }
 
     .btn-scroll-top.visible {
@@ -4289,10 +4359,20 @@
 
     @media (max-width: 768px) {
       .btn-scroll-top {
+        bottom: 84px;
+        right: 18px;
+        width: 40px;
+        height: 40px;
+      }
+      .btn-whatsapp-flotante {
         bottom: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+      }
+      .btn-whatsapp-flotante svg {
+        width: 26px;
+        height: 26px;
       }
     }
 
@@ -4528,7 +4608,7 @@
           <!-- Columna Izquierda: Historia, Visión y Valores -->
           <div class="biografia-texto">
             <p class="biografia-parrafo reveal-on-scroll reveal-delay-100" data-i18n="bioP1">
-              <strong>Psicólogo egresado del Politécnico Grancolombiano</strong>, especialista en acompañar <strong>procesos de transformación personal y profesional</strong> a través de la confluencia entre la <strong>psicología conductual</strong> y la <strong>perspectiva humanista</strong>.
+              <strong>Psicólogo en formación del Politécnico Grancolombiano</strong>, especialista en acompañar <strong>procesos de transformación personal y profesional</strong> a través de la confluencia entre la <strong>psicología conductual</strong> y la <strong>perspectiva humanista</strong>.
             </p>
             <p class="biografia-parrafo reveal-on-scroll reveal-delay-150" data-i18n="bioP2">
               Su trabajo se enfoca en el <strong>abordaje integral de los duelos y las rupturas afectivas</strong>, ofreciendo herramientas rigurosas y empáticas para <strong>transitar la pérdida</strong> y la <strong>reconstrucción del bienestar integral</strong>.
@@ -4772,7 +4852,7 @@
           <!-- Botón de Cotización que Desplaza al Formulario de Contacto -->
           <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 36px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
             <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Conferencias')" data-i18n="servConfBtn">Cotizar Conferencia para tu Evento</a>
-            <a href="https://wa.me/?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20y%20cotizaci%C3%B3n%20para%20una%20Conferencia%20Magistral." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
+            <a href="https://wa.me/573202041635?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20y%20cotizaci%C3%B3n%20para%20una%20Conferencia%20Magistral." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
               </svg>
@@ -4922,7 +5002,7 @@
           <!-- Botones de Acción -->
           <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
             <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Servicios para Empresas')" data-i18n="servEmpBtn">Cotizar Solución Empresarial</a>
-            <a href="https://wa.me/?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20sobre%20Servicios%20para%20Empresas%20y%20Talleres%20Organizacionales." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
+            <a href="https://wa.me/573202041635?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20sobre%20Servicios%20para%20Empresas%20y%20Talleres%20Organizacionales." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
               </svg>
@@ -5018,7 +5098,7 @@
           <!-- Botones de Acción -->
           <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
             <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Servicios para Instituciones Educativas')" data-i18n="servEduBtn">Cotizar Programa Educativo</a>
-            <a href="https://wa.me/?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20sobre%20Servicios%20para%20Instituciones%20Educativas." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
+            <a href="https://wa.me/573202041635?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20sobre%20Servicios%20para%20Instituciones%20Educativas." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
               </svg>
@@ -5113,7 +5193,7 @@
           <!-- Botones de Acción -->
           <div class="reveal-on-scroll reveal-delay-200" style="margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
             <a href="#contacto" class="btn btn-primary" onclick="seleccionarServicio('Servicios para Médicos')" data-i18n="servMedBtn">Agendar Entrenamiento MMI / Pruebas</a>
-            <a href="https://wa.me/?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20preparaci%C3%B3n%20para%20Mini%20Entrevistas%20M%C3%BAltiples%20(MMI)%20y%20Pruebas%20Aptitudinales%20para%20M%C3%A9dicos." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
+            <a href="https://wa.me/573202041635?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20y%20preparaci%C3%B3n%20para%20Mini%20Entrevistas%20M%C3%BAltiples%20(MMI)%20y%20Pruebas%20Aptitudinales%20para%20M%C3%A9dicos." target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--whatsapp); color: #ffffff; border-color: var(--whatsapp); display: inline-flex; align-items: center; gap: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
               </svg>
@@ -5314,7 +5394,7 @@
                 Si deseas agendar una conferencia, coordinar un taller para tu empresa o solicitar una sesión de asesoría psicológica personalizada, ponte en contacto directo por WhatsApp. Te responderemos a la brevedad con toda la información y disponibilidad.
               </p>
 
-              <a id="link-whatsapp-directo" href="https://wa.me/?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20Psicolog%C3%ADa%20y%20Conferencias." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; margin-top: auto; padding: 14px 20px; font-size: 0.98rem;">
+              <a id="link-whatsapp-directo" href="https://wa.me/573202041635?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20Psicolog%C3%ADa%20y%20Conferencias." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; margin-top: auto; padding: 14px 20px; font-size: 0.98rem;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
                 </svg>
@@ -5471,6 +5551,22 @@
     </div>
   </footer>
 
+  <!-- Botón Flotante de WhatsApp -->
+  <a 
+    id="btn-whatsapp-flotante" 
+    href="https://wa.me/573202041635?text=Hola%20Jaime,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20Psicolog%C3%ADa%20y%20Conferencias." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="btn-whatsapp-flotante" 
+    aria-label="Contactar por WhatsApp (+57 320 2041635)"
+    title="Chatear por WhatsApp"
+  >
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 2C6.507 2 2 6.507 2 12.031c0 1.905.534 3.687 1.458 5.213L2.053 22l4.908-1.389a9.98 9.98 0 005.07 1.42h.005c5.524 0 10.031-4.507 10.031-10.031A10.015 10.015 0 0012.031 2zm0 18.283h-.004a8.27 8.27 0 01-4.218-1.156l-.302-.18-3.13.886.885-3.053-.198-.315a8.252 8.252 0 01-1.27-4.434c0-4.567 3.716-8.283 8.283-8.283a8.25 8.25 0 015.858 2.427 8.25 8.25 0 012.425 5.856c0 4.568-3.716 8.283-8.283 8.283zm4.542-6.196c-.249-.125-1.472-.726-1.7-.809-.229-.083-.395-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.837 6.837 0 01-2.012-1.24 7.545 7.545 0 01-1.393-1.734c-.145-.249-.015-.384.11-.508.112-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.35-.769-1.849-.203-.487-.41-.421-.561-.428l-.478-.008c-.166 0-.436.062-.664.312-.229.249-.873.852-.873 2.078 0 1.226.893 2.41 1.018 2.576.125.166 1.758 2.684 4.258 3.764.595.257 1.06.41 1.423.525.598.19 1.142.163 1.572.099.48-.072 1.472-.602 1.68-1.184.208-.582.208-1.08.145-1.184-.063-.104-.229-.166-.478-.291z"/>
+    </svg>
+    <span class="btn-whatsapp-flotante-tooltip" data-i18n="waTooltip">¿Hablamos por WhatsApp?</span>
+  </a>
+
   <!-- Botón Flotante Volver Arriba (Scroll to Top) -->
   <button 
     type="button" 
@@ -5523,7 +5619,7 @@
         heroTitle: "Bienvenido al portal de Jaime Vargas | El Psico",
         bioTitle: "Biografía",
         bioSubtitle: "Perfil & Trayectoria Profesional",
-        bioP1: "<strong>Psicólogo egresado del Politécnico Grancolombiano</strong>, especialista en acompañar <strong>procesos de transformación personal y profesional</strong> a través de la confluencia entre la <strong>psicología conductual</strong> y la <strong>perspectiva humanista</strong>.",
+        bioP1: "<strong>Psicólogo en formación del Politécnico Grancolombiano</strong>, especialista en acompañar <strong>procesos de transformación personal y profesional</strong> a través de la confluencia entre la <strong>psicología conductual</strong> y la <strong>perspectiva humanista</strong>.",
         bioP2: "Su trabajo se enfoca en el <strong>abordaje integral de los duelos y las rupturas afectivas</strong>, ofreciendo herramientas rigurosas y empáticas para <strong>transitar la pérdida</strong> y la <strong>reconstrucción del bienestar integral</strong>.",
         bioP3: "Como <strong>conferencista de alto impacto</strong> y <strong>facilitador de talleres</strong> diseñados tanto para individuos como para el ámbito corporativo y la <strong>psicología organizacional</strong>, promueve el desarrollo de la <strong>comunicación efectiva</strong> y el <strong>estudio de las humanidades</strong> como pilares fundamentales del liderazgo y las relaciones interpersonales.",
         bioP4: "Paralelamente, se desempeña como <strong>escritor de divulgación psicológica</strong>, dedicado a <strong>traducir el conocimiento científico</strong> en reflexiones accesibles que inspiren una comprensión más profunda de la experiencia humana.",
@@ -5715,10 +5811,11 @@
         footerCopyright: "© 2026 <strong>Jaime Vargas</strong>. Todos los derechos reservados.",
         footerValues: "Jaime vargas | El Psico",
         placeholderName: "Ej. Ana Rodríguez",
-        placeholderPhone: "Ej. +34 600 000 000",
+        placeholderPhone: "Ej. +57 320 2041635",
         placeholderEmail: "tu@correo.com",
         placeholderMessage: "Indica fechas estimadas, número de asistentes o detalles de tu consulta...",
         waPrefill: "Hola Jaime, me gustaría solicitar información sobre tus servicios de Psicología y Conferencias.",
+        waTooltip: "¿Hablamos por WhatsApp?",
         toastSampleTitle: "Capítulo de Muestra Listo",
         toastSampleMsg: "Se ha generado la previsualización de «El Poder de la Palabra Consciente». Redirigiendo a la descarga en PDF..."
       },
@@ -5740,7 +5837,7 @@
         heroTitle: "Welcome to Jaime Vargas' Portal | El Psico",
         bioTitle: "Biography",
         bioSubtitle: "Professional Profile & Background",
-        bioP1: "<strong>Licensed Psychologist graduated from Politécnico Grancolombiano</strong>, specializing in guiding <strong>personal and organizational transformation</strong> at the intersection of <strong>behavioral psychology</strong> and a <strong>humanistic perspective</strong>.",
+        bioP1: "<strong>Psychologist in training at Politécnico Grancolombiano</strong>, specializing in guiding <strong>personal and organizational transformation</strong> at the intersection of <strong>behavioral psychology</strong> and a <strong>humanistic perspective</strong>.",
         bioP2: "His clinical expertise focuses on the <strong>comprehensive management of grief, loss, and relationship breakups</strong>, providing rigorous and compassionate frameworks to navigate transitions and rebuild sustainable psychological wellbeing.",
         bioP3: "As a <strong>high-impact keynote speaker</strong> and <strong>executive workshop facilitator</strong> for corporate leaders and organizations, he champions <strong>strategic communication</strong> and the <strong>humanities</strong> as fundamental pillars of authentic leadership and interpersonal excellence.",
         bioP4: "In parallel, he is an active <strong>psychology author and science communicator</strong>, dedicated to translating cognitive science into actionable insights that cultivate a deeper understanding of the human condition.",
@@ -5932,10 +6029,11 @@
         footerCopyright: "© 2026 <strong>Jaime Vargas</strong>. All rights reserved.",
         footerValues: "Jaime vargas | El Psico",
         placeholderName: "e.g., Sarah Johnson",
-        placeholderPhone: "e.g., +1 (555) 000-0000",
+        placeholderPhone: "e.g., +57 320 2041635",
         placeholderEmail: "name@example.com",
         placeholderMessage: "Include estimated dates, attendee count, or consultation details...",
         waPrefill: "Hello Jaime, I would like to request information regarding your Psychology and Keynote Speaking services.",
+        waTooltip: "Chat with us on WhatsApp",
         toastSampleTitle: "Sample Chapter Ready",
         toastSampleMsg: "Your preview of 'The Power of the Conscious Word' has been generated. Redirecting to PDF download..."
       }
@@ -6003,7 +6101,13 @@
       const linkWa = document.getElementById('link-whatsapp-directo');
       if (linkWa) {
         const prefill = encodeURIComponent(i18nDiccionario[nuevoIdioma].waPrefill);
-        linkWa.href = `https://wa.me/?text=${prefill}`;
+        linkWa.href = `https://wa.me/573202041635?text=${prefill}`;
+      }
+
+      const linkWaFlotante = document.getElementById('btn-whatsapp-flotante');
+      if (linkWaFlotante) {
+        const prefill = encodeURIComponent(i18nDiccionario[nuevoIdioma].waPrefill);
+        linkWaFlotante.href = `https://wa.me/573202041635?text=${prefill}`;
       }
 
       // 4. Actualizar estado visual de los botones del selector (Desktop & Mobile)
